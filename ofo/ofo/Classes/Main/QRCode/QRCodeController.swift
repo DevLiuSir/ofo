@@ -21,6 +21,15 @@ class QRCodeController: UIViewController {
     /// 冲击波视图
     @IBOutlet weak var scanLineView: UIImageView!
     
+    /// 手电筒开关点击
+    ///
+    /// - Parameter sender: UIButton
+    @IBAction func TorchSwitchTap(_ sender: UIButton) {
+        
+        sender.isSelected = !sender.isSelected  // 按钮状态取反
+        
+        TurnOnFlashlight()
+    }
     
     
     

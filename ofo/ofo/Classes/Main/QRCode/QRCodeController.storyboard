@@ -65,12 +65,16 @@
                                                             <constraint firstAttribute="width" constant="40" id="d8K-6n-qyc"/>
                                                         </constraints>
                                                         <state key="normal" image="btn_unenableTorch_w"/>
+                                                        <state key="selected" image="btn_enableTorch_w"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                                 <integer key="value" value="20"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="TorchSwitchTap:" destination="9IQ-Fw-ikH" eventType="touchUpInside" id="WKs-bv-1rz"/>
+                                                        </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="打开手电筒" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="edf-1y-6B0">
                                                         <rect key="frame" x="65.5" y="40" width="56.5" height="40"/>
@@ -150,7 +154,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="New-iL-dzM" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="blackTranslucent" id="wU3-Fz-Kza">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="blackTranslucent" id="wU3-Fz-Kza">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -167,6 +171,7 @@
     <resources>
         <image name="bg_QRCodeLine" width="244" height="3"/>
         <image name="bg_QRCodeStorke" width="257" height="257"/>
+        <image name="btn_enableTorch_w" width="21" height="21"/>
         <image name="btn_unenableTorch_w" width="15" height="23"/>
         <image name="inputBlikeNo" width="15" height="23"/>
     </resources>
