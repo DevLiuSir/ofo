@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="New-iL-dzM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Code Controller-->
+        <scene sceneID="tqa-Rk-Rpl">
+            <objects>
+                <viewController id="9IQ-Fw-ikH" customClass="QRCodeController" customModule="ofo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VyR-cz-TTk"/>
+                        <viewControllerLayoutGuide type="bottom" id="jUK-7x-Nwc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Mc7-px-Ed4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AzS-xg-EOr" userLabel="panelView">
+                                <rect key="frame" x="0.0" y="534" width="375" height="133"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="cXE-1W-qZy">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="133"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="4uZ-Jq-F5L">
+                                                <rect key="frame" x="0.0" y="26.5" width="187.5" height="80"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Upe-f5-qlX">
+                                                        <rect key="frame" x="74" y="0.0" width="40" height="40"/>
+                                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="40" id="6yQ-5q-jEb"/>
+                                                            <constraint firstAttribute="width" constant="40" id="CVC-FL-s4b"/>
+                                                        </constraints>
+                                                        <state key="normal" image="inputBlikeNo"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="20"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="手动输入车牌" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NzU-PJ-Isc">
+                                                        <rect key="frame" x="60" y="40" width="67.5" height="40"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="5Vb-cj-UqD">
+                                                <rect key="frame" x="187.5" y="26.5" width="187.5" height="80"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xBq-yU-v5u">
+                                                        <rect key="frame" x="74" y="0.0" width="40" height="40"/>
+                                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="40" id="BaE-k7-uY9"/>
+                                                            <constraint firstAttribute="width" constant="40" id="d8K-6n-qyc"/>
+                                                        </constraints>
+                                                        <state key="normal" image="btn_unenableTorch_w"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="20"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="打开手电筒" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="edf-1y-6B0">
+                                                        <rect key="frame" x="65.5" y="40" width="56.5" height="40"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <constraints>
+                                    <constraint firstItem="cXE-1W-qZy" firstAttribute="leading" secondItem="AzS-xg-EOr" secondAttribute="leading" id="Q0i-OV-j6B"/>
+                                    <constraint firstItem="cXE-1W-qZy" firstAttribute="top" secondItem="AzS-xg-EOr" secondAttribute="top" id="dgE-Sq-q5h"/>
+                                    <constraint firstAttribute="trailing" secondItem="cXE-1W-qZy" secondAttribute="trailing" id="fCK-9a-WD4"/>
+                                    <constraint firstAttribute="bottom" secondItem="cXE-1W-qZy" secondAttribute="bottom" id="yv3-jD-axC"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mjg-FJ-e49" userLabel="containerView">
+                                <rect key="frame" x="59" y="169" width="257" height="257"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_QRCodeStorke" translatesAutoresizingMaskIntoConstraints="NO" id="R5Y-fw-eaw">
+                                        <rect key="frame" x="0.0" y="0.0" width="257" height="257"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_QRCodeLine" translatesAutoresizingMaskIntoConstraints="NO" id="znz-IJ-dl5">
+                                        <rect key="frame" x="0.0" y="0.0" width="257" height="3"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="257" id="4rS-eV-aVg"/>
+                                    <constraint firstAttribute="bottom" secondItem="R5Y-fw-eaw" secondAttribute="bottom" id="5EL-dN-bWx"/>
+                                    <constraint firstItem="R5Y-fw-eaw" firstAttribute="leading" secondItem="mjg-FJ-e49" secondAttribute="leading" id="RV6-ms-g9l"/>
+                                    <constraint firstItem="znz-IJ-dl5" firstAttribute="top" secondItem="mjg-FJ-e49" secondAttribute="top" id="V3W-fG-cfL"/>
+                                    <constraint firstItem="znz-IJ-dl5" firstAttribute="width" secondItem="mjg-FJ-e49" secondAttribute="width" id="XMC-FD-tqj"/>
+                                    <constraint firstAttribute="trailing" secondItem="R5Y-fw-eaw" secondAttribute="trailing" id="f6y-9N-RC5"/>
+                                    <constraint firstItem="R5Y-fw-eaw" firstAttribute="top" secondItem="mjg-FJ-e49" secondAttribute="top" id="f7o-XO-7on"/>
+                                    <constraint firstAttribute="width" constant="257" id="ms5-K2-Auw"/>
+                                    <constraint firstItem="znz-IJ-dl5" firstAttribute="centerX" secondItem="mjg-FJ-e49" secondAttribute="centerX" id="yhn-Tx-p9Y"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="对准车牌上的二维码,即可自动扫描" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7aO-rx-X8X">
+                                <rect key="frame" x="59" y="141" width="257" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <constraints>
+                            <constraint firstItem="jUK-7x-Nwc" firstAttribute="top" secondItem="AzS-xg-EOr" secondAttribute="bottom" id="AKx-91-lTb"/>
+                            <constraint firstItem="mjg-FJ-e49" firstAttribute="trailing" secondItem="7aO-rx-X8X" secondAttribute="trailing" id="Dcw-XK-6a0"/>
+                            <constraint firstItem="mjg-FJ-e49" firstAttribute="top" secondItem="7aO-rx-X8X" secondAttribute="bottom" constant="10" id="LQv-Yu-NJH"/>
+                            <constraint firstAttribute="trailing" secondItem="AzS-xg-EOr" secondAttribute="trailing" id="MbH-cD-YQ9"/>
+                            <constraint firstItem="mjg-FJ-e49" firstAttribute="centerX" secondItem="Mc7-px-Ed4" secondAttribute="centerX" id="OCT-we-eif"/>
+                            <constraint firstItem="mjg-FJ-e49" firstAttribute="top" secondItem="VyR-cz-TTk" secondAttribute="bottom" constant="105" id="V9E-ru-RQd"/>
+                            <constraint firstItem="AzS-xg-EOr" firstAttribute="leading" secondItem="Mc7-px-Ed4" secondAttribute="leading" id="gIZ-Yt-1C6"/>
+                            <constraint firstItem="mjg-FJ-e49" firstAttribute="leading" secondItem="7aO-rx-X8X" secondAttribute="leading" id="rxK-40-DIB"/>
+                            <constraint firstItem="AzS-xg-EOr" firstAttribute="height" secondItem="Mc7-px-Ed4" secondAttribute="height" multiplier="0.2" id="uGQ-Rn-ahx"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="wPl-x3-EWf"/>
+                    <connections>
+                        <outlet property="containerHeightConstraint" destination="4rS-eV-aVg" id="iwa-WO-msP"/>
+                        <outlet property="scanLineTopConstranit" destination="V3W-fG-cfL" id="N7D-92-R9p"/>
+                        <outlet property="scanLineView" destination="znz-IJ-dl5" id="Nar-Ed-aWx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z9e-N3-vUU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="613.60000000000002" y="26.53673163418291"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="D6U-1m-piF">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="New-iL-dzM" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="blackTranslucent" id="wU3-Fz-Kza">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="9IQ-Fw-ikH" kind="relationship" relationship="rootViewController" id="7uQ-wv-89W"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UAr-qA-rCk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-162.40000000000001" y="26.53673163418291"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bg_QRCodeLine" width="244" height="3"/>
+        <image name="bg_QRCodeStorke" width="257" height="257"/>
+        <image name="btn_unenableTorch_w" width="15" height="23"/>
+        <image name="inputBlikeNo" width="15" height="23"/>
+    </resources>
+</document>

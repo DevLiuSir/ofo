@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MainViewController.swift
 //  ofo
 //
 //  Created by Liu Chuan on 2017/7/16.
@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class ViewController: UIViewController {
+class MainViewController: UIViewController {
 
     // MARK: - 控件属性
     /// 地图
@@ -27,6 +27,13 @@ class ViewController: UIViewController {
         return imV
     }()
     
+    /// 扫码用车按钮事件
+    ///
+    /// - Parameter sender: 按钮
+    @IBAction func sweepCodeCar(_ sender: UIButton) {
+        
+        scanQRCode()
+    }
     
     // MARK: - 系统函数
     override func viewDidLoad() {
@@ -39,7 +46,7 @@ class ViewController: UIViewController {
 }
 
 // MARK: - 配置UI
-extension ViewController {
+extension MainViewController {
     
     /// 配置UI界面
     fileprivate func configUI() {
@@ -47,7 +54,6 @@ extension ViewController {
         addSubV()
         configNavigationBar()
     }
-    
     
     /// 添加控件
     private func addSubV() {
@@ -76,3 +82,19 @@ extension ViewController {
         navigationController?.navigationBar.tintColor = UIColor.gray
     }
 }
+
+
+
+// MARK: - 事件监听
+extension MainViewController {
+    
+    /// 扫描二维码
+    fileprivate func scanQRCode() {
+        // 获取storyboard
+        let storyBoard = UIStoryboard(name: "QRCodeController", bundle: nil)
+        let qrcodeVC = storyBoard.instantiateInitialViewController()
+        present(qrcodeVC!, animated: true, completion: nil)     // motal展现
+    }
+}
+
+
