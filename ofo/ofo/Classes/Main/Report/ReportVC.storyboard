@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="lQk-UO-3VC">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--ReportVC-->
+        <scene sceneID="tmH-MR-jWB">
+            <objects>
+                <viewController id="lQk-UO-3VC" customClass="ReportVC" customModule="ofo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sbW-Yx-pz4"/>
+                        <viewControllerLayoutGuide type="bottom" id="u7K-Iu-Dvu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="38L-ae-bbR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jzO-vi-vBR">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="tyL-Qw-hna">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="W7t-hf-1kj">
+                                <rect key="frame" x="67" y="200.5" width="242" height="267"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="EOt-Bq-87Q">
+                                        <rect key="frame" x="0.0" y="0.0" width="242" height="118.5"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="-16" translatesAutoresizingMaskIntoConstraints="NO" id="xTq-9E-Gs8">
+                                                <rect key="frame" x="0.0" y="0.0" width="106" height="118.5"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QRc-6b-LTV">
+                                                        <rect key="frame" x="0.0" y="0.0" width="106" height="120"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="106" id="NH6-8J-5LT"/>
+                                                            <constraint firstAttribute="height" constant="120" id="iq7-MB-mIk"/>
+                                                        </constraints>
+                                                        <state key="normal" image="report_park"/>
+                                                        <state key="highlighted" image="report_park_hover"/>
+                                                        <connections>
+                                                            <action selector="btnParkTapped:" destination="lQk-UO-3VC" eventType="touchUpInside" id="J1S-me-eTU"/>
+                                                        </connections>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="乱停车" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PTb-Qb-PeX">
+                                                        <rect key="frame" x="34.5" y="104" width="37" height="14.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <size key="shadowOffset" width="0.0" height="0.0"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="-16" translatesAutoresizingMaskIntoConstraints="NO" id="1Mb-SD-lLF">
+                                                <rect key="frame" x="136" y="0.0" width="106" height="118.5"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PXJ-7H-WJ3">
+                                                        <rect key="frame" x="0.0" y="0.0" width="106" height="120"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="106" id="6Ie-gS-Sny"/>
+                                                            <constraint firstAttribute="height" constant="120" id="D5C-FP-4cX"/>
+                                                        </constraints>
+                                                        <state key="normal" image="report_nobike"/>
+                                                        <state key="highlighted" image="report_nobike_hover"/>
+                                                        <connections>
+                                                            <action selector="btnNobikeTapped:" destination="lQk-UO-3VC" eventType="touchUpInside" id="1BD-VQ-Ve4"/>
+                                                        </connections>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="没车用" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hes-R4-67j">
+                                                        <rect key="frame" x="34.5" y="104" width="37" height="14.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <size key="shadowOffset" width="0.0" height="0.0"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="ZtQ-4J-nh2">
+                                        <rect key="frame" x="0.0" y="148.5" width="242" height="118.5"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="-16" translatesAutoresizingMaskIntoConstraints="NO" id="uoG-Ft-B6K">
+                                                <rect key="frame" x="0.0" y="0.0" width="106" height="118.5"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mwn-jk-N1H">
+                                                        <rect key="frame" x="0.0" y="0.0" width="106" height="120"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="120" id="WXi-pS-iZu"/>
+                                                            <constraint firstAttribute="width" constant="106" id="eHb-rR-N79"/>
+                                                        </constraints>
+                                                        <state key="normal" image="report_broken"/>
+                                                        <state key="highlighted" image="report_broken_hover"/>
+                                                        <connections>
+                                                            <action selector="btnBrokenTapped:" destination="lQk-UO-3VC" eventType="touchUpInside" id="fDg-AY-pkc"/>
+                                                        </connections>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="车损坏" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b7G-DH-aFD">
+                                                        <rect key="frame" x="34.5" y="104" width="37" height="14.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <size key="shadowOffset" width="0.0" height="0.0"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="-16" translatesAutoresizingMaskIntoConstraints="NO" id="GVq-fu-k4W">
+                                                <rect key="frame" x="136" y="0.0" width="106" height="118.5"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CNu-9w-1NI">
+                                                        <rect key="frame" x="0.0" y="0.0" width="106" height="120"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="106" id="MMi-PS-b72"/>
+                                                            <constraint firstAttribute="height" constant="120" id="PbM-f7-KEb"/>
+                                                        </constraints>
+                                                        <state key="normal" image="report_locked"/>
+                                                        <state key="highlighted" image="report_locked_hover"/>
+                                                        <connections>
+                                                            <action selector="btnLockedTapped:" destination="lQk-UO-3VC" eventType="touchUpInside" id="MI3-3w-5SA"/>
+                                                        </connections>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="上私锁" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HHR-jG-hzL">
+                                                        <rect key="frame" x="34.5" y="104" width="37" height="14.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <size key="shadowOffset" width="0.0" height="0.0"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qwl-6l-gag">
+                                <rect key="frame" x="331" y="20" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="bpC-NR-37d"/>
+                                    <constraint firstAttribute="height" constant="44" id="dhe-x7-CgS"/>
+                                </constraints>
+                                <state key="normal" image="closeFork"/>
+                                <connections>
+                                    <action selector="btnCloseTapped:" destination="lQk-UO-3VC" eventType="touchUpInside" id="oUc-ax-pGu"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="jzO-vi-vBR" firstAttribute="height" secondItem="38L-ae-bbR" secondAttribute="height" id="QRU-AH-mdK"/>
+                            <constraint firstItem="jzO-vi-vBR" firstAttribute="width" secondItem="38L-ae-bbR" secondAttribute="width" id="WD4-uH-95z"/>
+                            <constraint firstItem="qwl-6l-gag" firstAttribute="top" secondItem="sbW-Yx-pz4" secondAttribute="bottom" id="fFx-sa-g8F"/>
+                            <constraint firstAttribute="trailing" secondItem="qwl-6l-gag" secondAttribute="trailing" id="k3y-n7-Y4R"/>
+                            <constraint firstItem="W7t-hf-1kj" firstAttribute="centerX" secondItem="38L-ae-bbR" secondAttribute="centerX" id="pGc-1Q-kgI"/>
+                            <constraint firstItem="W7t-hf-1kj" firstAttribute="centerY" secondItem="38L-ae-bbR" secondAttribute="centerY" id="qZP-t1-7PO"/>
+                            <constraint firstItem="jzO-vi-vBR" firstAttribute="centerY" secondItem="38L-ae-bbR" secondAttribute="centerY" id="tbB-6W-fdJ"/>
+                            <constraint firstItem="jzO-vi-vBR" firstAttribute="centerX" secondItem="38L-ae-bbR" secondAttribute="centerX" id="tqJ-1N-syG"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="gRG-1x-r5B"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outletCollection property="stackViews" destination="xTq-9E-Gs8" collectionClass="NSMutableArray" id="Cgi-wM-hUr"/>
+                        <outletCollection property="stackViews" destination="1Mb-SD-lLF" collectionClass="NSMutableArray" id="DLp-qL-UzL"/>
+                        <outletCollection property="stackViews" destination="uoG-Ft-B6K" collectionClass="NSMutableArray" id="EGm-MQ-bKz"/>
+                        <outletCollection property="stackViews" destination="GVq-fu-k4W" collectionClass="NSMutableArray" id="vhb-bc-rse"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qBo-kL-n9v" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2257" y="873"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="closeFork" width="15" height="15"/>
+        <image name="report_broken" width="106" height="106"/>
+        <image name="report_broken_hover" width="106" height="106"/>
+        <image name="report_locked" width="106" height="106"/>
+        <image name="report_locked_hover" width="106" height="106"/>
+        <image name="report_nobike" width="106" height="106"/>
+        <image name="report_nobike_hover" width="106" height="106"/>
+        <image name="report_park" width="106" height="106"/>
+        <image name="report_park_hover" width="106" height="106"/>
+    </resources>
+</document>

@@ -57,6 +57,10 @@
                                                     <constraint firstAttribute="width" secondItem="Pfu-fb-93f" secondAttribute="height" multiplier="1:1" id="gkU-kK-xiM"/>
                                                 </constraints>
                                                 <state key="normal" image="user_center_icon"/>
+                                                <connections>
+                                                    <action selector="UserCenterTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kQO-Ck-XZJ"/>
+                                                    <segue destination="Y3q-wY-j9u" kind="presentation" identifier="PresentMenuSegue" animates="NO" modalPresentationStyle="overCurrentContext" id="Rzc-No-qFc"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -80,6 +84,9 @@
                                             <constraint firstAttribute="width" constant="40" id="tEe-Fx-ZaH"/>
                                         </constraints>
                                         <state key="normal" image="rightBottomImage"/>
+                                        <connections>
+                                            <segue destination="GFT-Fu-mNy" kind="presentation" identifier="PresentReportSegue" animates="NO" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="hAB-8p-bhA"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LST-nU-rnW">
                                         <rect key="frame" x="327" y="59" width="40" height="40"/>
@@ -88,6 +95,9 @@
                                             <constraint firstAttribute="width" constant="40" id="Jyf-4R-PA0"/>
                                         </constraints>
                                         <state key="normal" image="leftBottomImage" backgroundImage="leftBottomBackgroundImage"/>
+                                        <connections>
+                                            <action selector="btnPositionTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uX0-1u-LWh"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nUX-Fo-BLA">
                                         <rect key="frame" x="170" y="106" width="35" height="35"/>
@@ -136,6 +146,7 @@
                         <outlet property="UserCenter" destination="Pfu-fb-93f" id="FHx-Kw-WZg"/>
                         <outlet property="containerView" destination="a6i-j0-xMn" id="YkE-jr-bgz"/>
                         <outlet property="panelView" destination="gTW-jz-HNY" id="02E-VL-ycT"/>
+                        <outlet property="sweepCodeCarBtn" destination="Dfx-rK-5VD" id="T7b-Qm-3GY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -148,7 +159,23 @@
                 <viewControllerPlaceholder storyboardName="ActivityCenterController" id="rI9-JK-pMh" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hPz-Vi-aaU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1671" y="793"/>
+            <point key="canvasLocation" x="1840" y="550"/>
+        </scene>
+        <!--MenuVC-->
+        <scene sceneID="GNU-kU-w2y">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MenuVC" id="Y3q-wY-j9u" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sBY-M2-dOj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1846" y="1053"/>
+        </scene>
+        <!--ReportVC-->
+        <scene sceneID="Mli-88-y0O">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ReportVC" id="GFT-Fu-mNy" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="30t-vz-2k7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1841" y="793"/>
         </scene>
     </scenes>
     <resources>

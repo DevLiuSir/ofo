@@ -15,7 +15,7 @@ class ActivityCenterController: UIViewController, UIGestureRecognizerDelegate {
     
 
     
-    // MARK: - 系统回调函数
+    // MARK: - 视图生命周期
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -38,45 +38,18 @@ extension ActivityCenterController {
     private func configNavigationBar() {
         
         title = "活动中心"
-
-//        // 隐藏返回按钮
-//        navigationItem.hidesBackButton = true
-//        navigationItem.backBarButtonItem?.title = ""
-
-//        /// 新的返回按钮
-//        let newBakcButton = UIBarButtonItem(image: UIImage(named: "backIndicator"), style: .plain, target: self, action: #selector(back))
+        
+//        //修改“返回按钮”图标
+//        let leftBarBtn = UIBarButtonItem(title: " ", style: .plain, target: self, action: #selector(backToPrevious))
+//        leftBarBtn.image =  UIImage(named: "backIndicator")
 //        
-//        navigationItem.leftBarButtonItem = newBakcButton
-//        
-        //启用滑动返回（swipe back）
-        navigationController?.interactivePopGestureRecognizer!.delegate = self
-
-        // 修改导航栏按钮颜色
-//        navigationController?.navigationBar.tintColor = UIColor.gray
-        
-//        // 隐藏返回按钮上的文字
-//        navigationItem.backBarButtonItem?.setBackButtonTitlePositionAdjustment(UIOffset(horizontal: 0, vertical: -60), for: .default)
-//        
-//        navigationItem.backBarButtonItem?.image = UIImage(named: "backIndicator")
-        
-        
-        
-        /*self.navigationItem.hidesBackButton = true
-         let newBackButton = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.Plain, target: self, action: "back:")
-         self.navigationItem.leftBarButtonItem = newBackButton;
-         }
-         
-         func back(sender: UIBarButtonItem) {
-         // Perform your custom actions
-         // ...
-         // Go back to the previous ViewController
-         self.navigationController?.popViewControllerAnimated(true)
-         
-*/
-        
-        
-        
-        
+//        //用于消除左边空隙，要不然按钮顶不到最前面
+//        let spacer = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
+//        spacer.width = -10
+//        navigationItem.leftBarButtonItems = [spacer, leftBarBtn]
+//       
+//        //启用滑动返回（swipe back）
+//        navigationController?.interactivePopGestureRecognizer!.delegate = self
     }
     
     /// 配置网页视图
@@ -94,13 +67,13 @@ extension ActivityCenterController {
 // MARK: - 事件监听
 extension ActivityCenterController {
     
-    
+//    
 //    /// 返回按钮事件
-//    @objc fileprivate func back() {
-//        self.navigationController?.popViewController(animated: true)
+//    @objc fileprivate func backToPrevious() {
+//        _ = navigationController?.popViewController(animated: true)
 //    }
 //    
-//    
-//      
+    
+      
     
 }

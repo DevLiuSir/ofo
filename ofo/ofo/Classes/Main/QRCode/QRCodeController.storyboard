@@ -45,6 +45,9 @@
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="InputCar:" destination="9IQ-Fw-ikH" eventType="touchUpInside" id="FLG-aR-NUm"/>
+                                                        </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="手动输入车牌" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NzU-PJ-Isc">
                                                         <rect key="frame" x="60" y="40" width="67.5" height="40"/>
@@ -87,7 +90,7 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="cXE-1W-qZy" firstAttribute="leading" secondItem="AzS-xg-EOr" secondAttribute="leading" id="Q0i-OV-j6B"/>
                                     <constraint firstItem="cXE-1W-qZy" firstAttribute="top" secondItem="AzS-xg-EOr" secondAttribute="top" id="dgE-Sq-q5h"/>

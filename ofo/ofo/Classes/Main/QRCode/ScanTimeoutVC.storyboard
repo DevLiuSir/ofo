@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="WTn-hG-Qqn">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Scan TimeoutVC-->
+        <scene sceneID="ee9-di-FyF">
+            <objects>
+                <viewController storyboardIdentifier="ScanTimeout" id="WTn-hG-Qqn" customClass="ScanTimeoutVC" customModule="ofo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="B0p-0B-zhZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="rkv-pn-AYP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="at6-a1-W5N">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1fG-vD-Cs3">
+                                <rect key="frame" x="20" y="30" width="335" height="360"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OFc-Ye-Wdj">
+                                        <rect key="frame" x="12" y="12" width="21" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="AGQ-3d-pdh"/>
+                                            <constraint firstAttribute="width" constant="21" id="cku-bC-yiZ"/>
+                                        </constraints>
+                                        <state key="normal" image="torch_close_icon"/>
+                                        <state key="selected" image="torch_open_icon"/>
+                                        <connections>
+                                            <action selector="FlashlightBtnTap:" destination="WTn-hG-Qqn" eventType="touchUpInside" id="bMN-hf-5oI"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yv3-Ph-Hw4">
+                                        <rect key="frame" x="302" y="12" width="21" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="21" id="cJ6-7m-pcu"/>
+                                            <constraint firstAttribute="height" constant="21" id="kq0-bf-zzP"/>
+                                        </constraints>
+                                        <state key="normal" image="closeFork"/>
+                                        <connections>
+                                            <action selector="btnCloseTapped:" destination="WTn-hG-Qqn" eventType="touchUpInside" id="fjB-O8-LFN"/>
+                                        </connections>
+                                    </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="errorImage" translatesAutoresizingMaskIntoConstraints="NO" id="iVN-Y1-WpS">
+                                        <rect key="frame" x="97" y="50" width="140" height="140"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="140" id="0dc-Y1-47o"/>
+                                            <constraint firstAttribute="height" constant="140" id="ggO-aA-KAa"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="扫描超时" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ghz-8W-mKT">
+                                        <rect key="frame" x="127" y="200" width="82" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="输入车牌号，获取解锁码" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="idp-2R-00w">
+                                        <rect key="frame" x="40" y="256" width="255" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="H5t-6J-7l1"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="iVN-Y1-WpS" firstAttribute="centerX" secondItem="1fG-vD-Cs3" secondAttribute="centerX" id="0gF-XE-7dx"/>
+                                    <constraint firstItem="idp-2R-00w" firstAttribute="leading" secondItem="1fG-vD-Cs3" secondAttribute="leading" constant="40" id="2fh-xE-m9u"/>
+                                    <constraint firstItem="Ghz-8W-mKT" firstAttribute="centerX" secondItem="1fG-vD-Cs3" secondAttribute="centerX" id="64h-6K-aN2"/>
+                                    <constraint firstItem="Yv3-Ph-Hw4" firstAttribute="top" secondItem="1fG-vD-Cs3" secondAttribute="top" constant="12" id="7Le-GS-8qu"/>
+                                    <constraint firstAttribute="trailing" secondItem="Yv3-Ph-Hw4" secondAttribute="trailing" constant="12" id="GaG-7C-KdU"/>
+                                    <constraint firstAttribute="trailing" secondItem="idp-2R-00w" secondAttribute="trailing" constant="40" id="Gat-ef-Zac"/>
+                                    <constraint firstItem="Ghz-8W-mKT" firstAttribute="top" secondItem="iVN-Y1-WpS" secondAttribute="bottom" constant="10" id="IUf-iy-cft"/>
+                                    <constraint firstItem="iVN-Y1-WpS" firstAttribute="top" secondItem="1fG-vD-Cs3" secondAttribute="top" constant="50" id="K3b-ZN-Qj7"/>
+                                    <constraint firstItem="OFc-Ye-Wdj" firstAttribute="leading" secondItem="1fG-vD-Cs3" secondAttribute="leading" constant="12" id="Rfh-ae-9vk"/>
+                                    <constraint firstAttribute="height" constant="360" id="dnK-sG-Fdr"/>
+                                    <constraint firstItem="OFc-Ye-Wdj" firstAttribute="top" secondItem="1fG-vD-Cs3" secondAttribute="top" constant="12" id="wW0-ur-RkM"/>
+                                    <constraint firstAttribute="bottom" secondItem="idp-2R-00w" secondAttribute="bottom" constant="60" id="zbB-5t-Bxs"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WDx-NI-A6z">
+                                <rect key="frame" x="158" y="360" width="60" height="60"/>
+                                <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="I4U-Gz-Vqs"/>
+                                    <constraint firstAttribute="height" constant="60" id="wph-Fo-xfJ"/>
+                                </constraints>
+                                <state key="normal" image="nextArrow_enable"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="WDx-NI-A6z" firstAttribute="bottom" secondItem="1fG-vD-Cs3" secondAttribute="bottom" constant="30" id="AhR-i3-dtt"/>
+                            <constraint firstItem="1fG-vD-Cs3" firstAttribute="top" secondItem="B0p-0B-zhZ" secondAttribute="bottom" constant="10" id="G95-f6-2Me"/>
+                            <constraint firstItem="1fG-vD-Cs3" firstAttribute="leading" secondItem="at6-a1-W5N" secondAttribute="leading" constant="20" id="QcB-e1-9M3"/>
+                            <constraint firstItem="WDx-NI-A6z" firstAttribute="centerX" secondItem="at6-a1-W5N" secondAttribute="centerX" id="lzK-jl-klF"/>
+                            <constraint firstAttribute="trailing" secondItem="1fG-vD-Cs3" secondAttribute="trailing" constant="20" id="qsI-D5-xJT"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bottomView" destination="1fG-vD-Cs3" id="sdM-hi-Cxn"/>
+                        <outlet property="continueBtn" destination="WDx-NI-A6z" id="rR1-Gx-Q7V"/>
+                        <outlet property="inputTextField" destination="idp-2R-00w" id="Hi0-Am-ZdX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hBJ-pW-nwM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-350" y="54"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="closeFork" width="15" height="15"/>
+        <image name="errorImage" width="140" height="140"/>
+        <image name="nextArrow_enable" width="25" height="19"/>
+        <image name="torch_close_icon" width="21" height="21"/>
+        <image name="torch_open_icon" width="11" height="18"/>
+    </resources>
+</document>

@@ -8,10 +8,29 @@
 
 /* Begin PBXBuildFile section */
 		6B00840C1F1B0C9900A348E6 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B00840B1F1B0C9900A348E6 /* MapKit.framework */; };
+		6B080AF01F2478AD007F866F /* InputCarLicenseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B080AEF1F2478AD007F866F /* InputCarLicenseController.swift */; };
+		6B3B9E981F449CC4006B0971 /* MyPinAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3B9E971F449CC4006B0971 /* MyPinAnnotation.swift */; };
+		6B5A79CB1F39E73B00826B8F /* UserInfoAvatarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5A79CA1F39E73B00826B8F /* UserInfoAvatarCell.swift */; };
+		6B5A79CD1F39E7C000826B8F /* UserInfoDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5A79CC1F39E7C000826B8F /* UserInfoDetailCell.swift */; };
 		6B71919B1F1A8B3900557D20 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B71919A1F1A8B3900557D20 /* AppDelegate.swift */; };
 		6B7191A01F1A8B3900557D20 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B71919E1F1A8B3900557D20 /* Main.storyboard */; };
 		6B7191A21F1A8B3900557D20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B7191A11F1A8B3900557D20 /* Assets.xcassets */; };
 		6B7191A51F1A8B3900557D20 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B7191A31F1A8B3900557D20 /* LaunchScreen.storyboard */; };
+		6B78B5941F38927F007D46A1 /* UserInfoController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B78B5931F38927F007D46A1 /* UserInfoController.storyboard */; };
+		6B9CB2171F24BF4D00F2981A /* InputCarLicenseController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B9CB2161F24BF4D00F2981A /* InputCarLicenseController.storyboard */; };
+		6B9CB21A1F24E83900F2981A /* UserInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9CB2191F24E83900F2981A /* UserInfoController.swift */; };
+		6BAA27C01F2F045A00758DD4 /* ScanTimeoutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BAA27BF1F2F045A00758DD4 /* ScanTimeoutVC.swift */; };
+		6BAA27C21F2F047900758DD4 /* ScanTimeoutVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BAA27C11F2F047900758DD4 /* ScanTimeoutVC.storyboard */; };
+		6BAA27C51F2F1A0E00758DD4 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BAA27C41F2F1A0E00758DD4 /* MenuVC.swift */; };
+		6BAA27C91F2F1E5700758DD4 /* CustomMenuTabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BAA27C81F2F1E5700758DD4 /* CustomMenuTabelCell.swift */; };
+		6BAA27CD1F2F85F700758DD4 /* MenuVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BAA27CC1F2F85F700758DD4 /* MenuVC.storyboard */; };
+		6BAA27D01F2F8E7B00758DD4 /* ReportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BAA27CF1F2F8E7B00758DD4 /* ReportVC.swift */; };
+		6BAA27D21F2F8F4C00758DD4 /* ReportVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BAA27D11F2F8F4C00758DD4 /* ReportVC.storyboard */; };
+		6BAC38061F37563700A3AD5D /* 香港中环.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 6BAC38051F37563700A3AD5D /* 香港中环.gpx */; };
+		6BAC38081F3756A700A3AD5D /* loginVideoV2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6BAC38071F3756A700A3AD5D /* loginVideoV2.mp4 */; };
+		6BCC38931F3B04DA006ABE12 /* SettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCC38921F3B04DA006ABE12 /* SettingController.swift */; };
+		6BCC38951F3B1B7E006ABE12 /* AboutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCC38941F3B1B7E006ABE12 /* AboutVC.swift */; };
+		6BCC38971F3B228D006ABE12 /* MyNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCC38961F3B228D006ABE12 /* MyNavigationController.swift */; };
 		6BFF61131F1B6407006447B1 /* ActivityCenterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFF610C1F1B6407006447B1 /* ActivityCenterController.swift */; };
 		6BFF61141F1B6407006447B1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFF610E1F1B6407006447B1 /* MainViewController.swift */; };
 		6BFF61151F1B6407006447B1 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFF61111F1B6407006447B1 /* UIView+Extension.swift */; };
@@ -25,13 +44,32 @@
 /* Begin PBXFileReference section */
 		2E82AAA083E137B9A535F1FC /* Pods-ofo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ofo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ofo/Pods-ofo.debug.xcconfig"; sourceTree = "<group>"; };
 		6B00840B1F1B0C9900A348E6 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		6B080AEF1F2478AD007F866F /* InputCarLicenseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputCarLicenseController.swift; sourceTree = "<group>"; };
 		6B348C561F1BF2A6003FFCDC /* ofo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ofo-Bridging-Header.h"; sourceTree = "<group>"; };
+		6B3B9E971F449CC4006B0971 /* MyPinAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPinAnnotation.swift; sourceTree = "<group>"; };
+		6B5A79CA1F39E73B00826B8F /* UserInfoAvatarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoAvatarCell.swift; sourceTree = "<group>"; };
+		6B5A79CC1F39E7C000826B8F /* UserInfoDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoDetailCell.swift; sourceTree = "<group>"; };
 		6B7191971F1A8B3900557D20 /* ofo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ofo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B71919A1F1A8B3900557D20 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6B71919F1F1A8B3900557D20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6B7191A11F1A8B3900557D20 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6B7191A41F1A8B3900557D20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6B7191A61F1A8B3900557D20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6B78B5931F38927F007D46A1 /* UserInfoController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserInfoController.storyboard; sourceTree = "<group>"; };
+		6B9CB2161F24BF4D00F2981A /* InputCarLicenseController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = InputCarLicenseController.storyboard; sourceTree = "<group>"; };
+		6B9CB2191F24E83900F2981A /* UserInfoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoController.swift; sourceTree = "<group>"; };
+		6BAA27BF1F2F045A00758DD4 /* ScanTimeoutVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanTimeoutVC.swift; sourceTree = "<group>"; };
+		6BAA27C11F2F047900758DD4 /* ScanTimeoutVC.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ScanTimeoutVC.storyboard; sourceTree = "<group>"; };
+		6BAA27C41F2F1A0E00758DD4 /* MenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
+		6BAA27C81F2F1E5700758DD4 /* CustomMenuTabelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomMenuTabelCell.swift; sourceTree = "<group>"; };
+		6BAA27CC1F2F85F700758DD4 /* MenuVC.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MenuVC.storyboard; sourceTree = "<group>"; };
+		6BAA27CF1F2F8E7B00758DD4 /* ReportVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportVC.swift; sourceTree = "<group>"; };
+		6BAA27D11F2F8F4C00758DD4 /* ReportVC.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ReportVC.storyboard; sourceTree = "<group>"; };
+		6BAC38051F37563700A3AD5D /* 香港中环.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "香港中环.gpx"; sourceTree = "<group>"; };
+		6BAC38071F3756A700A3AD5D /* loginVideoV2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = loginVideoV2.mp4; sourceTree = "<group>"; };
+		6BCC38921F3B04DA006ABE12 /* SettingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingController.swift; sourceTree = "<group>"; };
+		6BCC38941F3B1B7E006ABE12 /* AboutVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutVC.swift; sourceTree = "<group>"; };
+		6BCC38961F3B228D006ABE12 /* MyNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyNavigationController.swift; path = Category/MyNavigationController.swift; sourceTree = "<group>"; };
 		6BFF610C1F1B6407006447B1 /* ActivityCenterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityCenterController.swift; sourceTree = "<group>"; };
 		6BFF610E1F1B6407006447B1 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		6BFF61111F1B6407006447B1 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
@@ -105,13 +143,64 @@
 			path = ofo;
 			sourceTree = "<group>";
 		};
+		6B78B5951F38964E007D46A1 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				6BCC38921F3B04DA006ABE12 /* SettingController.swift */,
+				6BCC38941F3B1B7E006ABE12 /* AboutVC.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		6B9CB2181F24E81A00F2981A /* UserInfo */ = {
+			isa = PBXGroup;
+			children = (
+				6BAA27C31F2F19FC00758DD4 /* Menu */,
+				6B78B5951F38964E007D46A1 /* Setting */,
+				6B9CB2191F24E83900F2981A /* UserInfoController.swift */,
+				6B78B5931F38927F007D46A1 /* UserInfoController.storyboard */,
+				6B5A79CA1F39E73B00826B8F /* UserInfoAvatarCell.swift */,
+				6B5A79CC1F39E7C000826B8F /* UserInfoDetailCell.swift */,
+			);
+			path = UserInfo;
+			sourceTree = "<group>";
+		};
+		6BAA27C31F2F19FC00758DD4 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				6BAA27C41F2F1A0E00758DD4 /* MenuVC.swift */,
+				6BAA27CC1F2F85F700758DD4 /* MenuVC.storyboard */,
+				6BAA27C81F2F1E5700758DD4 /* CustomMenuTabelCell.swift */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		6BAA27CE1F2F8E5900758DD4 /* Report */ = {
+			isa = PBXGroup;
+			children = (
+				6BAA27CF1F2F8E7B00758DD4 /* ReportVC.swift */,
+				6BAA27D11F2F8F4C00758DD4 /* ReportVC.storyboard */,
+			);
+			path = Report;
+			sourceTree = "<group>";
+		};
+		6BAC38041F37562500A3AD5D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6BAC38051F37563700A3AD5D /* 香港中环.gpx */,
+				6BAC38071F3756A700A3AD5D /* loginVideoV2.mp4 */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		6BFF610A1F1B6407006447B1 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
 				6BFF610D1F1B6407006447B1 /* Main */,
-				6BFF61121F1B6407006447B1 /* UserInfo */,
+				6B9CB2181F24E81A00F2981A /* UserInfo */,
 				6BFF610B1F1B6407006447B1 /* ActivityCenter */,
 				6BFF610F1F1B6407006447B1 /* Tool */,
+				6BAC38041F37562500A3AD5D /* Resources */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -129,6 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				6BFF611B1F1B822E006447B1 /* QRCode */,
+				6BAA27CE1F2F8E5900758DD4 /* Report */,
 				6BFF610E1F1B6407006447B1 /* MainViewController.swift */,
 				6BFF61181F1B64A0006447B1 /* MainViewController.storyboard */,
 			);
@@ -140,6 +230,8 @@
 			children = (
 				6BFF61101F1B6407006447B1 /* Category */,
 				6B348C561F1BF2A6003FFCDC /* ofo-Bridging-Header.h */,
+				6B3B9E971F449CC4006B0971 /* MyPinAnnotation.swift */,
+				6BCC38961F3B228D006ABE12 /* MyNavigationController.swift */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -152,18 +244,15 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
-		6BFF61121F1B6407006447B1 /* UserInfo */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = UserInfo;
-			sourceTree = "<group>";
-		};
 		6BFF611B1F1B822E006447B1 /* QRCode */ = {
 			isa = PBXGroup;
 			children = (
 				6BFF611C1F1B8245006447B1 /* QRCodeController.swift */,
 				6BFF611E1F1B827A006447B1 /* QRCodeController.storyboard */,
+				6B080AEF1F2478AD007F866F /* InputCarLicenseController.swift */,
+				6B9CB2161F24BF4D00F2981A /* InputCarLicenseController.storyboard */,
+				6BAA27BF1F2F045A00758DD4 /* ScanTimeoutVC.swift */,
+				6BAA27C11F2F047900758DD4 /* ScanTimeoutVC.storyboard */,
 			);
 			path = QRCode;
 			sourceTree = "<group>";
@@ -203,7 +292,6 @@
 				TargetAttributes = {
 					6B7191961F1A8B3900557D20 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = QTU7D3WQQ9;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -238,10 +326,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				6BFF61191F1B64A0006447B1 /* MainViewController.storyboard in Resources */,
+				6BAC38061F37563700A3AD5D /* 香港中环.gpx in Resources */,
 				6BFF61171F1B647C006447B1 /* ActivityCenterController.storyboard in Resources */,
+				6B9CB2171F24BF4D00F2981A /* InputCarLicenseController.storyboard in Resources */,
+				6BAA27C21F2F047900758DD4 /* ScanTimeoutVC.storyboard in Resources */,
+				6BAC38081F3756A700A3AD5D /* loginVideoV2.mp4 in Resources */,
 				6BFF611F1F1B827A006447B1 /* QRCodeController.storyboard in Resources */,
 				6B7191A51F1A8B3900557D20 /* LaunchScreen.storyboard in Resources */,
 				6B7191A21F1A8B3900557D20 /* Assets.xcassets in Resources */,
+				6BAA27CD1F2F85F700758DD4 /* MenuVC.storyboard in Resources */,
+				6BAA27D21F2F8F4C00758DD4 /* ReportVC.storyboard in Resources */,
+				6B78B5941F38927F007D46A1 /* UserInfoController.storyboard in Resources */,
 				6B7191A01F1A8B3900557D20 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -302,8 +397,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				6BFF61141F1B6407006447B1 /* MainViewController.swift in Sources */,
+				6BCC38971F3B228D006ABE12 /* MyNavigationController.swift in Sources */,
+				6B5A79CB1F39E73B00826B8F /* UserInfoAvatarCell.swift in Sources */,
+				6B3B9E981F449CC4006B0971 /* MyPinAnnotation.swift in Sources */,
+				6B080AF01F2478AD007F866F /* InputCarLicenseController.swift in Sources */,
 				6B71919B1F1A8B3900557D20 /* AppDelegate.swift in Sources */,
+				6B5A79CD1F39E7C000826B8F /* UserInfoDetailCell.swift in Sources */,
+				6BAA27C01F2F045A00758DD4 /* ScanTimeoutVC.swift in Sources */,
+				6BCC38931F3B04DA006ABE12 /* SettingController.swift in Sources */,
 				6BFF61151F1B6407006447B1 /* UIView+Extension.swift in Sources */,
+				6BAA27D01F2F8E7B00758DD4 /* ReportVC.swift in Sources */,
+				6BAA27C51F2F1A0E00758DD4 /* MenuVC.swift in Sources */,
+				6BAA27C91F2F1E5700758DD4 /* CustomMenuTabelCell.swift in Sources */,
+				6BCC38951F3B1B7E006ABE12 /* AboutVC.swift in Sources */,
+				6B9CB21A1F24E83900F2981A /* UserInfoController.swift in Sources */,
 				6BFF61131F1B6407006447B1 /* ActivityCenterController.swift in Sources */,
 				6BFF611D1F1B8245006447B1 /* QRCodeController.swift in Sources */,
 			);
@@ -429,8 +536,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = QTU7D3WQQ9;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = ofo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.LC.ofo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -447,8 +555,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = QTU7D3WQQ9;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = ofo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.LC.ofo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
