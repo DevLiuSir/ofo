@@ -27,16 +27,16 @@ class MyNavigationController: UINavigationController {
     override func pushViewController(_ viewController: UIViewController, animated: Bool) {
         
         // 如果push进来的不是第一个控制器
-        if self.childViewControllers.count > 0 {
+        if self.children.count > 0 {
             
             // 用于消除左边空隙，要不然按钮顶不到最前面
-            let spacer = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
-            spacer.width = -10
+//            let spacer = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
+//            spacer.width = -10
             
             /// 修改“返回按钮”图标
             let backButton = UIBarButtonItem(image: #imageLiteral(resourceName: "backIndicator"), style: .plain, target: self, action: #selector(backToPrevious))
             
-            viewController.navigationItem.leftBarButtonItems = [spacer, backButton]
+            viewController.navigationItem.leftBarButtonItems = [backButton]
         }
         super.pushViewController(viewController, animated: animated)
     }
@@ -49,7 +49,7 @@ class MyNavigationController: UINavigationController {
 extension MyNavigationController {
     
     /// 配置导航栏
-    fileprivate func configNavigationBar() {
+    private func configNavigationBar() {
         navigationBar.tintColor = navigationBarTint
         self.interactivePopGestureRecognizer!.delegate = self   //启用滑动返回（swipe back）
     }
@@ -61,7 +61,7 @@ extension MyNavigationController {
 extension MyNavigationController {
     
     /// 返回按钮点击事件
-    func backToPrevious() {
+    @objc private func backToPrevious() {
         self.popViewController(animated: true)
     }
 }

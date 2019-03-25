@@ -2,6 +2,8 @@ platform :ios, '9.0'
 
 target 'ofo' do
 
+source 'https://github.com/CocoaPods/Specs.git'
+
 use_frameworks!
 
 pod 'AMap3DMap'

@@ -29,59 +29,65 @@ class MainViewController: UIViewController {
     
     /// 活动中心
     @IBOutlet weak var ActivityCenter: UIButton!
-
     
     // MARK: - 懒加载
+    
+    /// 高德地图
+    private lazy var mapView: MAMapView = MAMapView()
+    
+    /// 定位管理器
+    private lazy var locationManager: AMapLocationManager = {
+        let manager = AMapLocationManager()
+        manager.distanceFilter = 10
+        manager.locatingWithReGeocode = true
+//        manager.delegate = self
+        return manager
+    }()
+    
+    /// 搜索API
+    private lazy var search: AMapSearchAPI = AMapSearchAPI()
+    
+    /// 大头针点标注数据
+    private lazy var pin : MyPinAnnotation = MyPinAnnotation()
+    
+    /// 大头针视图
+    private lazy var pinView: MAAnnotationView = MAAnnotationView()
+    
+    /// 附近是否搜索
+    private var nearBySearch = true
+    
+    /// 当前视图是否在离开动画中，用来处理平移手势时，以防重复调用。
+    private var isAnimating = false
+    
+    
     /// 导航栏底部阴影图片
-    fileprivate lazy var shadowImageView: UIImageView = {
+    private lazy var shadowImageView: UIImageView = {
         let imV = UIImageView(frame: CGRect(x: 0, y: 0, width: screenW, height: shadowImageViewH))
         imV.image = UIImage(named: "whiteImage")
         return imV
     }()
     
-    
-    /// 高德地图
-    var mapView: MAMapView!
-    
-    /// 定位管理器
-    var locationManager: AMapLocationManager!
-    
-    /// 搜索API
-    var search: AMapSearchAPI!
-    
-    /// 大头针点标注数据
-    var pin : MyPinAnnotation!
-    
-    /// 大头针视图
-    var pinView: MAAnnotationView!
-    
-    /// 附近是否搜索
-    var nearBySearch = true
+    // MARK: - 按钮点击事件
     
     // 定位按钮
     @IBAction func btnPositionTapped(_ sender: UIButton) {
 //        locationManager.startUpdatingLocation()
         nearBySearch = true
         searchNearbyYellowBike()
-        
-        
     }
     
     /// 警告按钮点击
 //    @IBAction func btnReportTapped(_ sender: UIButton) {
 //        navigationController?.performSegue(withIdentifier: "PresentReportSegue", sender: nil)
 //    }
-    
-    
-    
-    /// 用户中心按钮点击
-    ///
-    /// - Parameter sender: 按钮
-    @IBAction func UserCenterTap(_ sender: UIButton) {
-        UserInfoTap()
-    }
-    
-    
+//
+//    /// 用户中心按钮点击
+//    ///
+//    /// - Parameter sender: 按钮
+//    @IBAction func UserCenterTap(_ sender: UIButton) {
+//        UserInfoTap()
+//    }
+//
     /// 扫码用车按钮事件
     ///
     /// - Parameter sender: 按钮
@@ -95,29 +101,31 @@ class MainViewController: UIViewController {
     /// - Parameter sender: 按钮
     @IBAction func arrowBtnTap(_ sender: UIButton) {
         
-        sender.isSelected = !sender.isSelected  // 取反按钮状态
+        movePanelView(sender)
         
-        if sender.isSelected {
-            UIView.animate(withDuration: 0.25) {    // 平移动画
-                // y值为: 正, 使得向下平移, 使得隐藏.
-                self.containerView.transform = CGAffineTransform(translationX: 0, y: self.panelView.frame.size.height)
-                self.sweepCodeCarBtn.transform = CGAffineTransform(translationX: 0, y: self.sweepCodeCarBtn.frame.size.height)
-                self.UserCenter.transform = CGAffineTransform(translationX: 0, y: self.UserCenter.frame.size.height)
-                self.ActivityCenter.transform = CGAffineTransform(translationX: 0, y: self.ActivityCenter.frame.size.height)
-            }
-            
-        } else {
-            
-            UIView.animate(withDuration: 0.25, animations: {
-                self.containerView.transform = .identity
-            })
-
-            UIView.animate(withDuration: 0.3, delay: 0.1, options: [], animations: {
-                self.sweepCodeCarBtn.transform = .identity
-                self.UserCenter.transform = .identity
-                self.ActivityCenter.transform = .identity
-            }, completion: nil)
-        }
+//        sender.isSelected = !sender.isSelected  // 取反按钮状态
+//
+//        if sender.isSelected {
+//            UIView.animate(withDuration: 0.25) {    // 平移动画
+//                // y值为: 正, 使得向下平移, 使得隐藏.
+//                self.containerView.transform = CGAffineTransform(translationX: 0, y: self.panelView.frame.size.height)
+//                self.sweepCodeCarBtn.transform = CGAffineTransform(translationX: 0, y: self.sweepCodeCarBtn.frame.size.height)
+//                self.UserCenter.transform = CGAffineTransform(translationX: 0, y: self.UserCenter.frame.size.height)
+//                self.ActivityCenter.transform = CGAffineTransform(translationX: 0, y: self.ActivityCenter.frame.size.height)
+//            }
+//
+//        } else {
+////
+////            UIView.animate(withDuration: 0.25, animations: {
+////            })
+//
+//            UIView.animate(withDuration: 0.3, delay: 0.1, options: [], animations: {
+//                self.containerView.transform = .identity
+//                self.sweepCodeCarBtn.transform = .identity
+//                self.UserCenter.transform = .identity
+//                self.ActivityCenter.transform = .identity
+//            }, completion: nil)
+//        }
         
     }
 
@@ -126,6 +134,11 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         
         configUI()
+        
+        
+        // 创建拖动手势, 并添加
+        let panGestrue = UIPanGestureRecognizer(target: self, action: #selector(handlePanGesture(recognizer:)))
+        panelView.addGestureRecognizer(panGestrue)
     }
 }
 
@@ -140,6 +153,13 @@ extension MainViewController {
         configMaMapView()
 //        initLocationManager()
         
+/*  设置Controller的additionalSafeAreaInsets属性，如果SafeAreaInset值为(20,0,0,0)，那么设置additionalSafeAreaInsets属性值为(-20,0,0,0)，则SafeAreaInsets不会对adjustedContentInset值产生影响，tableView内容不会显示异常。这里需要注意的是addtionalSafeAreaInset是Controller的属性，要知道SafeAreaInset的值是由哪个Controller引起的，可能是由自己的Controller调整的，可能是navigationController调整的。是由哪个Controller调整的，则设置哪个Controller的addtionalSafeAreaInset值来抵消掉SafeAreaInset值。
+*/
+        if #available(iOS 11.0, *) {
+            additionalSafeAreaInsets = UIEdgeInsets(top: -20, left: 0, bottom: 0, right: 0)
+        } else {
+            // Fallback on earlier versions
+        }
     }
     
     /// 添加控件
@@ -149,7 +169,6 @@ extension MainViewController {
     
     /// 配置导航栏
     private func configNavigationBar() {
-        
         // 左边的item
         let imageView = UIImageView(image: UIImage(named: "yellowBikeLogo"))
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: imageView)
@@ -169,11 +188,16 @@ extension MainViewController {
     /// 配置高德地图
     private func configMaMapView() {
         mapView = MAMapView(frame: view.bounds)
-        mapView.zoomLevel = 17      // 设置缩放级别
+//        mapView = MAMapView(frame: CGRect(x: 0, y: 0, width: screenW, height: screenH - tabBarH))
+        
+        // 设置缩放级别
+        mapView.zoomLevel = 17
         
         ///如果您需要进入地图就显示定位小蓝点，则需要下面两行代码
         mapView.showsUserLocation = true
-        mapView.userTrackingMode = MAUserTrackingMode.follow    // 追踪位置
+        
+        // 追踪位置
+        mapView.userTrackingMode = MAUserTrackingMode.follow
         mapView.delegate = self
         
         // 构造主搜索对象 AMapSearchAPI，并设置代理。
@@ -183,13 +207,13 @@ extension MainViewController {
         view.insertSubview(mapView, at: 0)
     }
     
-    /// 初始化定位管理器
-    private func initLocationManager() {
-        locationManager = AMapLocationManager()
-//        locationManager.delegate = self
-        locationManager.distanceFilter = 10
-        locationManager.locatingWithReGeocode = true
-    }
+//    /// 初始化定位管理器
+//    private func initLocationManager() {
+//        locationManager = AMapLocationManager()
+////        locationManager.delegate = self
+//        locationManager.distanceFilter = 10
+//        locationManager.locatingWithReGeocode = true
+//    }
 
     
 }
@@ -198,24 +222,55 @@ extension MainViewController {
 extension MainViewController {
     
     /// 扫描二维码
-    fileprivate func scanQRCode() {
+    private func scanQRCode() {
         // 获取storyboard
         let storyBoard = UIStoryboard(name: "QRCodeController", bundle: nil)
         let qrcodeVC = storyBoard.instantiateInitialViewController()
         present(qrcodeVC!, animated: true, completion: nil)     // motal展现
     }
     
-    /// 用户信息按钮点击
-    fileprivate func UserInfoTap() {
+    /// 平移PanelView
+    private func movePanelView(_ btn: UIButton)  {
         
-//        self.performSegue(withIdentifier: "PresentMenuSegue", sender: nil)
+        btn.isSelected = !btn.isSelected  // 取反按钮状态
+        if btn.isSelected {
+            UIView.animate(withDuration: 0.3) { // 平移动画: y值为: 正, 使得向下平移, 使得隐藏.
+                self.containerView.transform = CGAffineTransform(translationX: 0, y: self.panelView.height)
+                self.sweepCodeCarBtn.transform = CGAffineTransform(translationX: 0, y: self.sweepCodeCarBtn.height)
+                self.UserCenter.transform = CGAffineTransform(translationX: 0, y: self.UserCenter.height)
+                self.ActivityCenter.transform = CGAffineTransform(translationX: 0, y: self.ActivityCenter.height)
+            }
+        }else {
+            UIView.animate(withDuration: 0.3, animations: {
+                self.containerView.transform = .identity
+                self.sweepCodeCarBtn.transform = .identity
+            })
+            UIView.animate(withDuration: 0.6, animations: {
+                self.UserCenter.transform = .identity
+                self.ActivityCenter.transform = .identity
+            })
+        }
     }
-
+    
+    /// 平移手势，当向下平移时，关闭菜单
+    ///
+    /// - Parameter recognizer: 拖动手势识别器
+    @objc private func handlePanGesture(recognizer: UIPanGestureRecognizer) {
+        /// 获取拖动的Y值
+        let translationY = recognizer.translation(in: self.view).y
+        // 拖动的值清零
+        recognizer.setTranslation(CGPoint.zero, in: self.view)
+        
+        //isAnimating 确保这里只调用一次。
+        if  translationY > 0 && !isAnimating {
+            isAnimating = true
+        }
+    }
     
     /// 搜索自定义位置
     ///
     /// - Parameter center: 2d地图
-    func searchCustomLocation(_ center: CLLocationCoordinate2D) {
+    private func searchCustomLocation(_ center: CLLocationCoordinate2D) {
         let request = AMapPOIAroundSearchRequest()
         request.location = AMapGeoPoint.location(withLatitude: CGFloat(center.latitude), longitude: CGFloat(center.longitude))
         
@@ -245,7 +300,6 @@ extension MainViewController {
         UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0, options: [], animations: {
             self.pinView.frame = endFrame
         }, completion: nil)
-        
     }
     
 
@@ -298,16 +352,19 @@ extension MainViewController: MAMapViewDelegate {
         }
         
         if annotation is MyPinAnnotation {
+            
             let reuseid = "anchor"
+            
             var av = mapView.dequeueReusableAnnotationView(withIdentifier: reuseid)
+            
             if av == nil {
                 av = MAPinAnnotationView(annotation: annotation, reuseIdentifier: reuseid)
             }
+            
             // 设置大头针
             av?.image = #imageLiteral(resourceName: "homePage_wholeAnchor")
             av?.canShowCallout = false
-            
-            pinView = av    // 赋值大头针
+            pinView = av!    // 赋值大头针
             return av
         }
         
@@ -320,6 +377,7 @@ extension MainViewController: MAMapViewDelegate {
         }
         
         if annotation.title == "正常可用" {
+            //设置标注图标
             annotationView?.image = #imageLiteral(resourceName: "HomePage_nearbyBike")
         } else {
             annotationView?.image = #imageLiteral(resourceName: "HomePage_nearbyBikeRedPacket")
@@ -348,7 +406,7 @@ extension MainViewController: AMapSearchDelegate {
         
         // 遍历请求的结果
         for poi in response.pois {
-            print(poi.name)
+            print(poi.name!)
         }
 
         
@@ -379,9 +437,4 @@ extension MainViewController: AMapSearchDelegate {
     
     
 }
-
-
-
-
-
 

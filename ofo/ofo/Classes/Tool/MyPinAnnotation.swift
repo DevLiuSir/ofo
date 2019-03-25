@@ -8,7 +8,7 @@
 
 import Foundation
 
-/// 我的大头针标注
+/// 自定义小黄车标注点视图
 class MyPinAnnotation: MAPointAnnotation {
     
 }

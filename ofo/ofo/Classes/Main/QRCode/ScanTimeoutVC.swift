@@ -39,7 +39,7 @@ class ScanTimeoutVC: UIViewController {
         
         self.view.removeFromSuperview()                                 // 移除父视图
         parent?.navigationController?.navigationBar.isHidden = false    // 父视图控制器的导航栏不隐藏
-        self.removeFromParentViewController()                           // 从父视图控制器中移除
+        self.removeFromParent()                           // 从父视图控制器中移除
         
     }
     
@@ -49,11 +49,6 @@ class ScanTimeoutVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // 添加通知
-//        NotificationCenter.default.addObserver(self, selector: #selector(textFieldDidChanged), name: NSNotification.Name.UITextFieldTextDidChange, object: nil)
-        
-        
-        
         // 注册键盘通知
         /**
          *参数一：注册观察者对象，参数不能为空
@@ -61,6 +56,7 @@ class ScanTimeoutVC: UIViewController {
          *参数三：通知的名字
          *参数四：收到指定对象的通知，没有指定具体对象就写nil
          */
+//        NotificationCenter.default.addObserver(self, selector: #selector(textFieldDidChanged), name: NSNotification.Name.UITextFieldTextDidChange, object: nil)
 //        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
 //        
 //        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
@@ -68,8 +64,6 @@ class ScanTimeoutVC: UIViewController {
         // 创建点击手势, 并添加
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(keyboardWillHide))
         bottomView.addGestureRecognizer(tapGesture)
-        
-        
     }
     
     // 视图即将可见时, 调用
@@ -78,7 +72,6 @@ class ScanTimeoutVC: UIViewController {
         
         configTexField()
     }
-    
     
     /// 视图即将消失时, 加载
     ///
@@ -94,20 +87,14 @@ class ScanTimeoutVC: UIViewController {
          *参数四：收到指定对象的通知，没有指定具体对象就写nil
          */
     
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UITextFieldTextDidChange, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UITextField.textDidChangeNotification, object: nil)
     
 //        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
 //        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
 //        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UITextFieldTextDidChange, object: nil)
        
-        
-        
-        
-        
     }
-    
-    
-    
+  
 }
 
 // MARK: - 配置UI
@@ -139,13 +126,10 @@ extension ScanTimeoutVC {
 //        self.continueBtn.transform = CGAffineTransform(translationX: 0, y: 30)
     }
 
-    
-    
-    
     /// 根据输入框文字的个数，设置tipLabel的内容，以及按钮的状态
     ///
     /// - Parameter textField: 文本输入框
-    func textFieldDidChanged(textField: UITextField) {
+    @objc func textFieldDidChanged(textField: UITextField) {
         let text = textField.text ?? ""
         
         if text.isEmpty {                   // 如果文本输入框文字为空, 设置按钮状态\背景色

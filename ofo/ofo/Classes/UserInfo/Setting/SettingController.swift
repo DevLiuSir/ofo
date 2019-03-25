@@ -27,7 +27,7 @@ class SettingController: UITableViewController {
             
             let confirmAction = UIAlertAction(title: "确定", style: .default, handler: { (_) in
                 //跳转到App设置界面
-                 UIApplication.shared.open(URL(string: UIApplicationOpenSettingsURLString)!, options:[:], completionHandler: nil)
+                 UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!, options:convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
             })
             let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: { (_) in
                 sender.isOn = true
@@ -42,7 +42,7 @@ class SettingController: UITableViewController {
             // UIApplication.shared.openURL(URL(string: UIApplicationOpenSettingsURLString)!)
             
             /* iOS10 之后 */
-            UIApplication.shared.open(URL(string: UIApplicationOpenSettingsURLString)!, options:[:], completionHandler: nil)
+            UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!, options:convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
             
         }
         
@@ -53,11 +53,11 @@ class SettingController: UITableViewController {
         super.viewDidLoad()
         
         //注册通知
-        NotificationCenter.default.addObserver(self, selector: #selector(checkAllowPush), name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(checkAllowPush), name: UIApplication.didBecomeActiveNotification, object: nil)
     }
     deinit {
         // 移除通知
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIApplication.didBecomeActiveNotification, object: nil)
     }
     
     /// 视图即将可见时, 加载
@@ -77,31 +77,7 @@ class SettingController: UITableViewController {
 extension SettingController {
     
     //检测通知状态，设置UISwitch开关状态
-    func checkAllowPush(){
-        
-/*
-        if #available(iOS 10.0, *) {
-            UNUserNotificationCenter.current().getNotificationSettings(completionHandler: { (settings) in
-                if settings.authorizationStatus == UNAuthorizationStatus.authorized {
-                    self.pushSwitch.isOn = true
-                }else {
-                    self.pushSwitch.isOn = false
-                }
-            })
-        }
-        else {
-            // iOS 8.0 后的版本
-            let settings = UIApplication.shared.currentUserNotificationSettings
-            
-            //TODO: - 需要测试 rawValue是否正确
-            if settings?.types == UIUserNotificationType.init(rawValue: 0)  {
-                self.pushSwitch.isOn = true
-            } else {
-                self.pushSwitch.isOn = false
-            }
-        }
-    }
-*/
+    @objc func checkAllowPush(){
 
        
         if #available(iOS 10.0, *) {
@@ -131,3 +107,8 @@ extension SettingController {
 }
 
 
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToUIApplicationOpenExternalURLOptionsKeyDictionary(_ input: [String: Any]) -> [UIApplication.OpenExternalURLOptionsKey: Any] {
+	return Dictionary(uniqueKeysWithValues: input.map { key, value in (UIApplication.OpenExternalURLOptionsKey(rawValue: key), value)})
+}

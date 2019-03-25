@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6B00840C1F1B0C9900A348E6 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B00840B1F1B0C9900A348E6 /* MapKit.framework */; };
+		6B05A36A2166004600A70B9A /* MyRegex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B05A3692166004600A70B9A /* MyRegex.swift */; };
 		6B080AF01F2478AD007F866F /* InputCarLicenseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B080AEF1F2478AD007F866F /* InputCarLicenseController.swift */; };
 		6B3B9E981F449CC4006B0971 /* MyPinAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3B9E971F449CC4006B0971 /* MyPinAnnotation.swift */; };
 		6B5A79CB1F39E73B00826B8F /* UserInfoAvatarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5A79CA1F39E73B00826B8F /* UserInfoAvatarCell.swift */; };
@@ -19,6 +20,8 @@
 		6B78B5941F38927F007D46A1 /* UserInfoController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B78B5931F38927F007D46A1 /* UserInfoController.storyboard */; };
 		6B9CB2171F24BF4D00F2981A /* InputCarLicenseController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B9CB2161F24BF4D00F2981A /* InputCarLicenseController.storyboard */; };
 		6B9CB21A1F24E83900F2981A /* UserInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9CB2191F24E83900F2981A /* UserInfoController.swift */; };
+		6B9DDEA61F46F040005C05AF /* ReportBaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9DDEA51F46F040005C05AF /* ReportBaseVC.swift */; };
+		6B9DDEA81F46F622005C05AF /* ReportBaseVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B9DDEA71F46F622005C05AF /* ReportBaseVC.storyboard */; };
 		6BAA27C01F2F045A00758DD4 /* ScanTimeoutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BAA27BF1F2F045A00758DD4 /* ScanTimeoutVC.swift */; };
 		6BAA27C21F2F047900758DD4 /* ScanTimeoutVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BAA27C11F2F047900758DD4 /* ScanTimeoutVC.storyboard */; };
 		6BAA27C51F2F1A0E00758DD4 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BAA27C41F2F1A0E00758DD4 /* MenuVC.swift */; };
@@ -28,9 +31,19 @@
 		6BAA27D21F2F8F4C00758DD4 /* ReportVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BAA27D11F2F8F4C00758DD4 /* ReportVC.storyboard */; };
 		6BAC38061F37563700A3AD5D /* 香港中环.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 6BAC38051F37563700A3AD5D /* 香港中环.gpx */; };
 		6BAC38081F3756A700A3AD5D /* loginVideoV2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6BAC38071F3756A700A3AD5D /* loginVideoV2.mp4 */; };
+		6BC75B4A20C2A3EF007B49BA /* LaunchVideoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC75B4920C2A3EF007B49BA /* LaunchVideoVC.swift */; };
+		6BC75B4C20C2A417007B49BA /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BC75B4B20C2A417007B49BA /* Login.storyboard */; };
+		6BC75B4E20C2A481007B49BA /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC75B4D20C2A481007B49BA /* LoginVC.swift */; };
+		6BC75B5220C2A743007B49BA /* VerifyCodeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC75B4F20C2A743007B49BA /* VerifyCodeTextField.swift */; };
+		6BC75B5320C2A743007B49BA /* MobileTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC75B5020C2A743007B49BA /* MobileTextField.swift */; };
+		6BC75B5420C2A743007B49BA /* VerifyCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC75B5120C2A743007B49BA /* VerifyCodeView.swift */; };
+		6BC75B5720C2AAF7007B49BA /* SwiftNotice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC75B5620C2AAF7007B49BA /* SwiftNotice.swift */; };
+		6BC75B5920C2AC49007B49BA /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC75B5820C2AC48007B49BA /* String+Extension.swift */; };
+		6BC75B5B20C2AD04007B49BA /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC75B5A20C2AD04007B49BA /* Reachability.swift */; };
 		6BCC38931F3B04DA006ABE12 /* SettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCC38921F3B04DA006ABE12 /* SettingController.swift */; };
 		6BCC38951F3B1B7E006ABE12 /* AboutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCC38941F3B1B7E006ABE12 /* AboutVC.swift */; };
 		6BCC38971F3B228D006ABE12 /* MyNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCC38961F3B228D006ABE12 /* MyNavigationController.swift */; };
+		6BCC99AE1F4601FB00362050 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCC99AD1F4601FB00362050 /* WebViewController.swift */; };
 		6BFF61131F1B6407006447B1 /* ActivityCenterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFF610C1F1B6407006447B1 /* ActivityCenterController.swift */; };
 		6BFF61141F1B6407006447B1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFF610E1F1B6407006447B1 /* MainViewController.swift */; };
 		6BFF61151F1B6407006447B1 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFF61111F1B6407006447B1 /* UIView+Extension.swift */; };
@@ -44,6 +57,7 @@
 /* Begin PBXFileReference section */
 		2E82AAA083E137B9A535F1FC /* Pods-ofo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ofo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ofo/Pods-ofo.debug.xcconfig"; sourceTree = "<group>"; };
 		6B00840B1F1B0C9900A348E6 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		6B05A3692166004600A70B9A /* MyRegex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyRegex.swift; sourceTree = "<group>"; };
 		6B080AEF1F2478AD007F866F /* InputCarLicenseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputCarLicenseController.swift; sourceTree = "<group>"; };
 		6B348C561F1BF2A6003FFCDC /* ofo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ofo-Bridging-Header.h"; sourceTree = "<group>"; };
 		6B3B9E971F449CC4006B0971 /* MyPinAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPinAnnotation.swift; sourceTree = "<group>"; };
@@ -58,6 +72,8 @@
 		6B78B5931F38927F007D46A1 /* UserInfoController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserInfoController.storyboard; sourceTree = "<group>"; };
 		6B9CB2161F24BF4D00F2981A /* InputCarLicenseController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = InputCarLicenseController.storyboard; sourceTree = "<group>"; };
 		6B9CB2191F24E83900F2981A /* UserInfoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoController.swift; sourceTree = "<group>"; };
+		6B9DDEA51F46F040005C05AF /* ReportBaseVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportBaseVC.swift; sourceTree = "<group>"; };
+		6B9DDEA71F46F622005C05AF /* ReportBaseVC.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ReportBaseVC.storyboard; sourceTree = "<group>"; };
 		6BAA27BF1F2F045A00758DD4 /* ScanTimeoutVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanTimeoutVC.swift; sourceTree = "<group>"; };
 		6BAA27C11F2F047900758DD4 /* ScanTimeoutVC.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ScanTimeoutVC.storyboard; sourceTree = "<group>"; };
 		6BAA27C41F2F1A0E00758DD4 /* MenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
@@ -67,9 +83,19 @@
 		6BAA27D11F2F8F4C00758DD4 /* ReportVC.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ReportVC.storyboard; sourceTree = "<group>"; };
 		6BAC38051F37563700A3AD5D /* 香港中环.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "香港中环.gpx"; sourceTree = "<group>"; };
 		6BAC38071F3756A700A3AD5D /* loginVideoV2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = loginVideoV2.mp4; sourceTree = "<group>"; };
+		6BC75B4920C2A3EF007B49BA /* LaunchVideoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchVideoVC.swift; sourceTree = "<group>"; };
+		6BC75B4B20C2A417007B49BA /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		6BC75B4D20C2A481007B49BA /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		6BC75B4F20C2A743007B49BA /* VerifyCodeTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyCodeTextField.swift; sourceTree = "<group>"; };
+		6BC75B5020C2A743007B49BA /* MobileTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MobileTextField.swift; sourceTree = "<group>"; };
+		6BC75B5120C2A743007B49BA /* VerifyCodeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyCodeView.swift; sourceTree = "<group>"; };
+		6BC75B5620C2AAF7007B49BA /* SwiftNotice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftNotice.swift; sourceTree = "<group>"; };
+		6BC75B5820C2AC48007B49BA /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		6BC75B5A20C2AD04007B49BA /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		6BCC38921F3B04DA006ABE12 /* SettingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingController.swift; sourceTree = "<group>"; };
 		6BCC38941F3B1B7E006ABE12 /* AboutVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutVC.swift; sourceTree = "<group>"; };
 		6BCC38961F3B228D006ABE12 /* MyNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyNavigationController.swift; path = Category/MyNavigationController.swift; sourceTree = "<group>"; };
+		6BCC99AD1F4601FB00362050 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		6BFF610C1F1B6407006447B1 /* ActivityCenterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityCenterController.swift; sourceTree = "<group>"; };
 		6BFF610E1F1B6407006447B1 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		6BFF61111F1B6407006447B1 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
@@ -180,6 +206,8 @@
 			children = (
 				6BAA27CF1F2F8E7B00758DD4 /* ReportVC.swift */,
 				6BAA27D11F2F8F4C00758DD4 /* ReportVC.storyboard */,
+				6B9DDEA51F46F040005C05AF /* ReportBaseVC.swift */,
+				6B9DDEA71F46F622005C05AF /* ReportBaseVC.storyboard */,
 			);
 			path = Report;
 			sourceTree = "<group>";
@@ -193,9 +221,33 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		6BC75B4820C2A3EF007B49BA /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				6BC75B4920C2A3EF007B49BA /* LaunchVideoVC.swift */,
+				6BC75B5020C2A743007B49BA /* MobileTextField.swift */,
+				6BC75B4F20C2A743007B49BA /* VerifyCodeTextField.swift */,
+				6BC75B5120C2A743007B49BA /* VerifyCodeView.swift */,
+				6BC75B4D20C2A481007B49BA /* LoginVC.swift */,
+				6BC75B4B20C2A417007B49BA /* Login.storyboard */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		6BC75B5520C2AAF7007B49BA /* ThirdFramework */ = {
+			isa = PBXGroup;
+			children = (
+				6BC75B5A20C2AD04007B49BA /* Reachability.swift */,
+				6BC75B5620C2AAF7007B49BA /* SwiftNotice.swift */,
+			);
+			path = ThirdFramework;
+			sourceTree = "<group>";
+		};
 		6BFF610A1F1B6407006447B1 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				6BC75B5520C2AAF7007B49BA /* ThirdFramework */,
+				6BC75B4820C2A3EF007B49BA /* Login */,
 				6BFF610D1F1B6407006447B1 /* Main */,
 				6B9CB2181F24E81A00F2981A /* UserInfo */,
 				6BFF610B1F1B6407006447B1 /* ActivityCenter */,
@@ -231,6 +283,7 @@
 				6BFF61101F1B6407006447B1 /* Category */,
 				6B348C561F1BF2A6003FFCDC /* ofo-Bridging-Header.h */,
 				6B3B9E971F449CC4006B0971 /* MyPinAnnotation.swift */,
+				6B05A3692166004600A70B9A /* MyRegex.swift */,
 				6BCC38961F3B228D006ABE12 /* MyNavigationController.swift */,
 			);
 			path = Tool;
@@ -239,6 +292,7 @@
 		6BFF61101F1B6407006447B1 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				6BC75B5820C2AC48007B49BA /* String+Extension.swift */,
 				6BFF61111F1B6407006447B1 /* UIView+Extension.swift */,
 			);
 			path = Category;
@@ -253,6 +307,7 @@
 				6B9CB2161F24BF4D00F2981A /* InputCarLicenseController.storyboard */,
 				6BAA27BF1F2F045A00758DD4 /* ScanTimeoutVC.swift */,
 				6BAA27C11F2F047900758DD4 /* ScanTimeoutVC.storyboard */,
+				6BCC99AD1F4601FB00362050 /* WebViewController.swift */,
 			);
 			path = QRCode;
 			sourceTree = "<group>";
@@ -268,7 +323,6 @@
 				6B7191931F1A8B3900557D20 /* Sources */,
 				6B7191941F1A8B3900557D20 /* Frameworks */,
 				6B7191951F1A8B3900557D20 /* Resources */,
-				991E8F0C82657F8319D74E1C /* [CP] Embed Pods Frameworks */,
 				911E2EB8D4FC7F5C2D35FFAC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
@@ -287,12 +341,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = LC;
 				TargetAttributes = {
 					6B7191961F1A8B3900557D20 = {
 						CreatedOnToolsVersion = 8.2.1;
-						LastSwiftMigration = 0820;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
@@ -304,7 +358,7 @@
 			};
 			buildConfigurationList = 6B7191921F1A8B3900557D20 /* Build configuration list for PBXProject "ofo" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
@@ -333,8 +387,10 @@
 				6BAC38081F3756A700A3AD5D /* loginVideoV2.mp4 in Resources */,
 				6BFF611F1F1B827A006447B1 /* QRCodeController.storyboard in Resources */,
 				6B7191A51F1A8B3900557D20 /* LaunchScreen.storyboard in Resources */,
+				6BC75B4C20C2A417007B49BA /* Login.storyboard in Resources */,
 				6B7191A21F1A8B3900557D20 /* Assets.xcassets in Resources */,
 				6BAA27CD1F2F85F700758DD4 /* MenuVC.storyboard in Resources */,
+				6B9DDEA81F46F622005C05AF /* ReportBaseVC.storyboard in Resources */,
 				6BAA27D21F2F8F4C00758DD4 /* ReportVC.storyboard in Resources */,
 				6B78B5941F38927F007D46A1 /* UserInfoController.storyboard in Resources */,
 				6B7191A01F1A8B3900557D20 /* Main.storyboard in Resources */,
@@ -350,13 +406,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ofo-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		911E2EB8D4FC7F5C2D35FFAC /* [CP] Copy Pods Resources */ = {
@@ -365,28 +424,18 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ofo/Pods-ofo-resources.sh",
+				"${PODS_ROOT}/AMap3DMap/MAMapKit.framework/AMap.bundle",
+				"${PODS_ROOT}/AMapNavi/AMapNaviKit.framework/AMapNavi.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AMap.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AMapNavi.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ofo/Pods-ofo-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		991E8F0C82657F8319D74E1C /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ofo/Pods-ofo-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ofo/Pods-ofo-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -397,17 +446,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				6BFF61141F1B6407006447B1 /* MainViewController.swift in Sources */,
+				6BCC99AE1F4601FB00362050 /* WebViewController.swift in Sources */,
+				6BC75B4E20C2A481007B49BA /* LoginVC.swift in Sources */,
+				6BC75B5220C2A743007B49BA /* VerifyCodeTextField.swift in Sources */,
 				6BCC38971F3B228D006ABE12 /* MyNavigationController.swift in Sources */,
+				6BC75B5B20C2AD04007B49BA /* Reachability.swift in Sources */,
 				6B5A79CB1F39E73B00826B8F /* UserInfoAvatarCell.swift in Sources */,
+				6BC75B5920C2AC49007B49BA /* String+Extension.swift in Sources */,
 				6B3B9E981F449CC4006B0971 /* MyPinAnnotation.swift in Sources */,
 				6B080AF01F2478AD007F866F /* InputCarLicenseController.swift in Sources */,
+				6BC75B5720C2AAF7007B49BA /* SwiftNotice.swift in Sources */,
+				6BC75B5320C2A743007B49BA /* MobileTextField.swift in Sources */,
 				6B71919B1F1A8B3900557D20 /* AppDelegate.swift in Sources */,
+				6B05A36A2166004600A70B9A /* MyRegex.swift in Sources */,
 				6B5A79CD1F39E7C000826B8F /* UserInfoDetailCell.swift in Sources */,
 				6BAA27C01F2F045A00758DD4 /* ScanTimeoutVC.swift in Sources */,
+				6BC75B4A20C2A3EF007B49BA /* LaunchVideoVC.swift in Sources */,
 				6BCC38931F3B04DA006ABE12 /* SettingController.swift in Sources */,
 				6BFF61151F1B6407006447B1 /* UIView+Extension.swift in Sources */,
 				6BAA27D01F2F8E7B00758DD4 /* ReportVC.swift in Sources */,
 				6BAA27C51F2F1A0E00758DD4 /* MenuVC.swift in Sources */,
+				6B9DDEA61F46F040005C05AF /* ReportBaseVC.swift in Sources */,
+				6BC75B5420C2A743007B49BA /* VerifyCodeView.swift in Sources */,
 				6BAA27C91F2F1E5700758DD4 /* CustomMenuTabelCell.swift in Sources */,
 				6BCC38951F3B1B7E006ABE12 /* AboutVC.swift in Sources */,
 				6B9CB21A1F24E83900F2981A /* UserInfoController.swift in Sources */,
@@ -447,15 +507,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -478,7 +546,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -496,15 +564,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -521,7 +597,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -534,17 +610,18 @@
 			baseConfigurationReference = 2E82AAA083E137B9A535F1FC /* Pods-ofo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = ofo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.LC.ofo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "ofo/Classes/Tool/ofo-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -553,16 +630,17 @@
 			baseConfigurationReference = A0E452C2F367E04F2D5F34F9 /* Pods-ofo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = ofo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.LC.ofo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "ofo/Classes/Tool/ofo-Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};

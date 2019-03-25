@@ -1,14 +1,14 @@
 PODS:
-  - AMap3DMap (5.2.1):
-    - AMapFoundation (~> 1.3)
-  - AMapFoundation (1.4.0)
-  - AMapLocation (2.4.0):
+  - AMap3DMap (7.1.0):
+    - AMapFoundation (~> 1.5)
+  - AMapFoundation (1.6.0)
+  - AMapLocation (2.6.3):
     - AMapFoundation (~> 1.4)
-  - AMapNavi (5.1.0):
-    - AMap3DMap (>= 5.2.1)
+  - AMapNavi (7.1.0):
+    - AMap3DMap (~> 7.0)
+    - AMapFoundation (~> 1.5)
+  - AMapSearch (7.1.0):
     - AMapFoundation (~> 1.4)
-  - AMapSearch (5.2.1):
-    - AMapFoundation (~> 1.2)
 
 DEPENDENCIES:
   - AMap3DMap
@@ -16,13 +16,21 @@ DEPENDENCIES:
   - AMapNavi
   - AMapSearch
 
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - AMap3DMap
+    - AMapFoundation
+    - AMapLocation
+    - AMapNavi
+    - AMapSearch
+
 SPEC CHECKSUMS:
-  AMap3DMap: 5a98d7c08d23a7f07853e7ee2fa7650057b75896
-  AMapFoundation: 458974f46a39df8407fd818ab83d2630d494c726
-  AMapLocation: 47b62b5381a66e4d0c2931b70ffde72682427896
-  AMapNavi: 9127e7cc171499830bc5613bc568984ad0b0ed04
-  AMapSearch: 4979b98adf56ed4dabe735435ed78d759ba0c21f
+  AMap3DMap: ef26e2fb120ae9f1635b4b26b28df6d1379a05f0
+  AMapFoundation: bc2f6e077b9279942734ba55f9624222fcf42848
+  AMapLocation: dc2c4fde95d72087d73934338160fadc72104bb7
+  AMapNavi: 28a5c56377342428a7381ac6abab286ff33c6251
+  AMapSearch: 6bd6d361c5eb00110e0bffa4acf88b7bb9f7e059
 
-PODFILE CHECKSUM: 689ffea856e799ac6645e7b2fb361c4955c13191
+PODFILE CHECKSUM: 543315476e3a4b4a702baa3ee139e6731be87fb0
 
-COCOAPODS: 1.2.0
+COCOAPODS: 1.8.4

@@ -43,11 +43,9 @@ class InputCarLicenseController: UIViewController {
     ///
     /// - Parameter sender: 按钮
     @IBAction func FlashlightBtnTap(_ sender: UIButton) {
-        
         sender.isSelected = !sender.isSelected  //按钮状态取反
-        print("手电筒按钮点击事件")
-        
         TurnOnFlashlight()
+        print("手电筒按钮点击事件")
     }
     
     /// 声音按钮点击事件
@@ -58,12 +56,10 @@ class InputCarLicenseController: UIViewController {
         print("声音按钮点击事件")
     }
 
-    
     /// 扫码解锁按钮点击事件
     ///
     /// - Parameter sender: 按钮
     @IBAction func ScanCodeBtnTap(_ sender: UIButton) {
-        
         scanQRCodeTap()
         print("扫码解锁按钮点击事件")
     }
@@ -77,10 +73,11 @@ class InputCarLicenseController: UIViewController {
     
     // MARK: - 懒加载
     /// 自定义文本输入框内占位符, 使得光标居中占位符
-    fileprivate lazy var customPlaceholderLabel: UILabel = {
-        let label = UILabel(frame: CGRect(x: 105, y: 0, width: 200, height: 40))
+    private lazy var customPlaceholderLabel: UILabel = {
+        let label = UILabel(frame: CGRect(x: (InputTextField.width - 200) / 2, y: 0, width: 200, height: 40))
         label.text = "请输入车牌号"
         label.textColor = UIColor.lightGray
+        label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: 15)
         return label
     }()
@@ -98,12 +95,11 @@ class InputCarLicenseController: UIViewController {
          *参数三：通知的名字
          *参数四：收到指定对象的通知，没有指定具体对象就写nil
          */
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
 
-         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         
-         NotificationCenter.default.addObserver(self, selector: #selector(textFieldDidChange), name: NSNotification.Name.UITextFieldTextDidChange, object: nil)
-        
+         NotificationCenter.default.addObserver(self, selector: #selector(textFieldDidChange), name: UITextField.textDidChangeNotification, object: nil)
     }
     
     /// 视图即将可见时, 加载
@@ -129,9 +125,9 @@ class InputCarLicenseController: UIViewController {
          *参数二：通知的名字
          *参数四：收到指定对象的通知，没有指定具体对象就写nil
          */
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UITextFieldTextDidChange, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UITextField.textDidChangeNotification, object: nil)
     }
 }
 
@@ -140,9 +136,10 @@ class InputCarLicenseController: UIViewController {
 extension InputCarLicenseController {
     
     /// 配置UI界面
-    fileprivate func configUI() {
+    private func configUI() {
         
-        reminderLabel.adjustsFontForContentSizeCategory = true   // 根据文本内容自动调整标签的宽度
+        // 根据文本内容自动调整标签的宽度
+        reminderLabel.adjustsFontForContentSizeCategory = true
         
         // 创建点击手势, 并添加
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(keyboardWillHide))
@@ -161,56 +158,6 @@ extension InputCarLicenseController {
         InputTextField.becomeFirstResponder()                        // 成为第一响应者 (弹出键盘)
         InputTextField.delegate = self
         InputTextField.addSubview(customPlaceholderLabel)
-        
-        
-        // 文本输入框 左边填充 文本输入框的一半
-//        InputTextField.setValue(NSNumber(value: Float(InputTextField.bounds.width * 0.5)), forKey: "paddingLeft")
-//        let leftV = UILabel(frame: CGRect(x: 0, y: 0, width: InputTextField.bounds.width * 0.5, height: 26))
-//
-//        leftV.backgroundColor = .clear
-//        InputTextField.leftView = leftV
-//        InputTextField.leftViewMode = .always
-     
-/*
-        // 文本字段文本的开头
-        let startPosition: UITextPosition = InputTextField.beginningOfDocument
-        
-        // 文本字段文本的最后结尾
-        let endPosition: UITextPosition = InputTextField.endOfDocument
-        
-        //当前选择的范围
-        let selectedRange: UITextRange? = InputTextField.selectedTextRange
-        
-        //到任意位置
-        
-        //从开始，向右移动3个字符。
-        
-        let arbitraryValue: Int = 3
-        
-        if let newPosition = InputTextField.position(from: startPosition, offset: arbitraryValue) {
-            
-            InputTextField.selectedTextRange = InputTextField.textRange(from: newPosition, to: newPosition)
-        }
- */
-/*
-        //获取光标位置
-        if let selectedRange = InputTextField.selectedTextRange {
-            
-            let cursorPosition = InputTextField.offset(from: InputTextField.beginningOfDocument, to: selectedRange.start)
-            print("\(cursorPosition)")
-        }
-        
-*/
-        //一开始
-        
-//        let newPosition = InputTextField.beginningOfDocument
-//        InputTextField.selectedTextRange = InputTextField.textRange(from: newPosition, to: newPosition)
-//        
-//        //到最后
-//        let newPosition = InputTextField.endOfDocument
-//        InputTextField.selectedTextRange = InputTextField.textRange(from: newPosition, to: newPosition)
-//        
-//
     }
 
     /// 配置立即用车按钮
@@ -224,7 +171,7 @@ extension InputCarLicenseController {
 extension InputCarLicenseController {
     
     /// 点击扫描二维码
-    fileprivate func scanQRCodeTap() {
+    private func scanQRCodeTap() {
         
         // 获取storyboard
         let storyBoard = UIStoryboard(name: "QRCodeController", bundle: nil)
@@ -232,7 +179,7 @@ extension InputCarLicenseController {
         
         // 获取根控制器
         let rootVC = UIApplication.shared.keyWindow?.rootViewController!
-        let vc = rootVC?.childViewControllers[0]
+        let vc = rootVC?.children[0]
         
         self.dismiss(animated: true, completion: nil)           // 返回上一级控制器
         vc?.present(qrcodeVC!, animated: true, completion: nil)  // motal展现
@@ -265,7 +212,7 @@ extension InputCarLicenseController {
     @objc fileprivate func textFieldDidChange() {
        
         // 获取输入框的字符数
-        switch (InputTextField.text!.characters.count) {
+        switch (InputTextField.text!.count) {
         case 0:
             reminderLabel.text = "输入车牌号, 获取解锁码"
         case 1...3:
@@ -275,7 +222,7 @@ extension InputCarLicenseController {
         }
         
         // 如果输入的字符: 大于0个字符. 设置背景色,隐藏占位符
-        if InputTextField.text!.characters.count > 0  {
+        if InputTextField.text!.count > 0  {
             ImmediatelyCar.backgroundColor = ofoWholeColor
             customPlaceholderLabel.isHidden = true
             
@@ -286,8 +233,6 @@ extension InputCarLicenseController {
     }
     
 }
-
-
 
 // MARK: - UITextFieldDelegate 协议
 extension InputCarLicenseController: UITextFieldDelegate {

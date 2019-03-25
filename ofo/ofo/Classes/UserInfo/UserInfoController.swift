@@ -8,11 +8,67 @@
 
 import UIKit
 
+/// 个人信息控制器
 class UserInfoController: UITableViewController, UIGestureRecognizerDelegate {
     
-    //表格要展示的数据源
+    
+    /// 头像按钮
+    var avatarButton: UIButton!
+    
+    
+    /*** 表格要展示的数据源 ***/
+    
+    
+    /// 分组title
     let sectionTitle = [[],["昵称", "性别", "生日", "ofo身份"], ["手机号", "微信", "QQ"], ["校园认证"]]
+    
+    
     var sectionValue = [[]]
+    
+    
+    /// 头像按钮点击事件(设置头像)
+    ///
+    /// - Parameter sender: UIButton
+    @IBAction func btnAvatarTapped(_ sender: UIButton) {
+        
+        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        /// 拍照
+        let takePhotoAction = UIAlertAction(title: "拍照", style: .default) { (action) in
+            if UIImagePickerController.isSourceTypeAvailable(.camera) {
+                let picker = UIImagePickerController()
+                picker.delegate = self
+                picker.sourceType = .camera
+                picker.allowsEditing = true
+                self.present(picker, animated: true, completion: nil)
+            } else {
+//                self.noticeError("找不到相机", autoClear: true, autoClearTime: 1)
+            }
+        }
+        
+        /// 相册选择
+        let selectFromAblumAction = UIAlertAction(title: "从相册选择", style: .default) { (action) in
+            if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+                let picker = UIImagePickerController()
+                picker.delegate = self
+                picker.sourceType = .photoLibrary
+                picker.allowsEditing = true
+                self.present(picker, animated: true, completion: nil)
+            } else {
+//                self.noticeError("读取相册错误", autoClear: true, autoClearTime: 1)
+            }
+        }
+        
+        /// 取消
+        let cancelAction = UIAlertAction(title: "取消", style: .cancel) { (default) in
+            print("取消")
+        }
+        
+        alertController.addAction(takePhotoAction)
+        alertController.addAction(selectFromAblumAction)
+        alertController.addAction(cancelAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
     
     // MARK: - 试图生命周期
     override func viewDidLoad() {
@@ -27,15 +83,13 @@ class UserInfoController: UITableViewController, UIGestureRecognizerDelegate {
 extension UserInfoController {
     
     /// 配置UI界面
-    fileprivate func configUI() {
+    private func configUI() {
         configNavigationBar()
     }
     
     /// 配置导航栏
     private func configNavigationBar() {
-        
         navigationController?.navigationBar.tintColor = navigationBarTint
-        
         let barButton = UIBarButtonItem(image: #imageLiteral(resourceName: "barButtonSetting"), style: .plain, target: self, action: #selector(settingBarButtonTapped))
         navigationItem.rightBarButtonItem = barButton
     }
@@ -104,15 +158,54 @@ extension UserInfoController {
         
         }
     }
+}
+
+// MARK: - UIImagePickerControllerDelegate, UINavigationControllerDelegate
+extension UserInfoController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    //头像选择照片成功后回调
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+// Local variable inserted by Swift 4.2 migrator.
+let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
+
+       
+        let image = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.editedImage)] as! UIImage
+        avatarButton.setImage(image, for: .normal)
+        saveAvatarToSandbox(image: image, quality: 1)
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    /// 将新头像保存到手机本地
+    ///
+    /// - Parameters:
+    ///   - image: 要保存的图像
+    ///   - quality: 图像质量（0.0 ~ 1.0）
+    ///   - imageName: 文件名，需要后缀。 eg: "avatar.jpg"
+    private func saveAvatarToSandbox(image: UIImage, quality: CGFloat) {
         
+        if let imageData = image.jpegData(compressionQuality: quality) as NSData? {
+//            let path = UserModel.shared.getAvatarPath()
+//            imageData.write(toFile: path, atomically: true)
+            
+            
+            print("将新头像保存到手机本地......")
+            
+        }
         
-        
-        
+    }
+    
 }
 
 
 
 
 
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromUIImagePickerControllerInfoKeyDictionary(_ input: [UIImagePickerController.InfoKey: Any]) -> [String: Any] {
+	return Dictionary(uniqueKeysWithValues: input.map {key, value in (key.rawValue, value)})
+}
 
-
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromUIImagePickerControllerInfoKey(_ input: UIImagePickerController.InfoKey) -> String {
+	return input.rawValue
+}

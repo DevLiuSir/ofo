@@ -36,35 +36,31 @@ class QRCodeController: UIViewController {
     /// - Parameter sender: 按钮
     @IBAction func InputCar(_ sender: UIButton) {
         
-        self.dismiss(animated: false, completion: nil)   // 返回上一级控制器 (移除扫描控制器)
+        // 返回上一级控制器 (移除扫描控制器)
+        self.dismiss(animated: false, completion: nil)
 
-        // 加载storyboard
+        /// 加载storyboard
         let InputVC = UIStoryboard(name: "InputCarLicenseController", bundle: nil).instantiateInitialViewController() as! InputCarLicenseController
         
-        InputVC.modalPresentationStyle = .overCurrentContext    // 垂直
+        // 过渡方式垂直
+        InputVC.modalPresentationStyle = .overCurrentContext
     
         // 获取根控制器
         let rootVC = UIApplication.shared.keyWindow?.rootViewController!
-        let vc = rootVC?.childViewControllers[0]
-        
+        let vc = rootVC?.children[0]
+        // 呈现控制器
         vc?.present(InputVC, animated: true, completion: nil)
     }
-    
-    
     
     /// 手电筒开关点击
     ///
     /// - Parameter sender: UIButton
     @IBAction func TorchSwitchTap(_ sender: UIButton) {
-        
         sender.isSelected = !sender.isSelected  // 按钮状态取反
-        
         TurnOnFlashlight()
     }
     
-    
-    
-    // MARK: - 系统函数
+    // MARK: - system method
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -75,7 +71,7 @@ class QRCodeController: UIViewController {
     }
     
 
-    /// 视图即将 可见 时,加载
+    /// 视图即将可见时,加载
     ///
     /// - Parameter animated: 是否动画
     override func viewDidAppear(_ animated: Bool) {
@@ -84,7 +80,7 @@ class QRCodeController: UIViewController {
         scanAnimation()
     }
     
-    /// 视图即将 消失 时,加载
+    /// 视图即将消失时,加载
     ///
     /// - Parameter animated: 是否动画
     override func viewWillDisappear(_ animated: Bool) {
@@ -92,7 +88,7 @@ class QRCodeController: UIViewController {
         timer.invalidate()  // 移除定时器
     }
     
-    
+    // MARK: - custom method
     
     /// 冲击波动画 (即: 改变冲击波的顶部约束 - 增大)
     private func scanAnimation() {
@@ -113,8 +109,7 @@ class QRCodeController: UIViewController {
             // 2.强制更新视图布局
             self.view.layoutIfNeeded()
         }
-        
-         startScan()
+        startScan()
     }
     
     /// 开始扫描
@@ -122,18 +117,18 @@ class QRCodeController: UIViewController {
         
         // 1. 开始输入
         // 1.1 获取摄像头设备
-        guard let device = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo) else { return }
+        guard let device = AVCaptureDevice.default(for: AVMediaType.video) else { return }
 
         // 1.2 把摄像头设备当作输入设备
         var input: AVCaptureDeviceInput?
         
         do {
+            //创建输入流
             input = try AVCaptureDeviceInput(device: device)
         } catch  {
             print(error)
             return
         }
-        
         
         // 2.设置输出
         let outPut = AVCaptureMetadataOutput()
@@ -144,8 +139,8 @@ class QRCodeController: UIViewController {
         // 3.创建会话, 链接输入和输出
         seesion = AVCaptureSession()
         // 如果能添加输入\输出, 然后才添加
-        if seesion!.canAddInput(input) && seesion!.canAddOutput(outPut) {
-            seesion!.addInput(input)
+        if seesion!.canAddInput(input!) && seesion!.canAddOutput(outPut) {
+            seesion!.addInput(input!)
             seesion!.addOutput(outPut)
         }else {
             return
@@ -156,29 +151,30 @@ class QRCodeController: UIViewController {
         // 相等
         // outPut.availableMetadataObjectTypes
         // AVMetadataObjectTypeQRCode
-        outPut.metadataObjectTypes = [AVMetadataObjectTypeQRCode]
-        
+        outPut.metadataObjectTypes = [AVMetadataObject.ObjectType.qr]
         
         // 3.2 添加视频预览图层 (让用户可以看见界面) * 不是必须添加的 *
-        let previewLayer = AVCaptureVideoPreviewLayer(session: seesion)
+        let previewLayer = AVCaptureVideoPreviewLayer(session: seesion!)
         
-        previewLayer?.frame = view.layer.bounds
-        view.layer.insertSublayer(previewLayer!, at: 0)
+        //设置预览图层的填充方式
+        previewLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
         
+        //设置预览图层的frame
+        previewLayer.frame = view.layer.bounds
+        
+        //将预览图层添加到预览视图上
+        view.layer.insertSublayer(previewLayer, at: 0)
         
         // 4.启动会话 (让输入开始采集数据, 输出对象, 开始处理数据)
         seesion!.startRunning()
     }
-    
-    
 }
 
 // MARK: - 配置UI
 extension QRCodeController {
     
     /// 配置UI界面
-    fileprivate func configUI() {
-        
+    private func configUI() {
         configNavigationBar()
     }
     
@@ -199,8 +195,6 @@ extension QRCodeController {
         let image = UIImage()
         navigationController?.navigationBar.setBackgroundImage(image, for: .default)
         navigationController?.navigationBar.shadowImage = image
-        
-        
     }
 }
 
@@ -208,45 +202,40 @@ extension QRCodeController {
 extension QRCodeController {
     
     /// 关闭按钮事件
-    @objc fileprivate func close() {
+    @objc private func close() {
         dismiss(animated: true, completion: nil)
     }
     
-    
     /// 显示扫描超时视图
-    @objc fileprivate func showInputViewWhenScanTimeout() {
+    @objc private func showInputViewWhenScanTimeout() {
         
         navigationController?.navigationBar.isHidden = true
         
         let scanTimeoutVC = UIStoryboard(name: "ScanTimeoutVC", bundle: nil).instantiateInitialViewController() as! ScanTimeoutVC
-        
         view.addSubview(scanTimeoutVC.view)
-        
-        addChildViewController(scanTimeoutVC)
+        addChild(scanTimeoutVC)
     }
-
-    
-    
-    
-    
 }
 
 // MARK: - AVCaptureMetadataOutputObjectsDelegate 协议
 extension QRCodeController: AVCaptureMetadataOutputObjectsDelegate {
     
     // 扫描到结果之后,调用
-    func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [Any]!, from connection: AVCaptureConnection!) {
-        
+    func metadataOutput(_ captureOutput: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
         
         print("扫描到结果.......")
-    
+        
+        if metadataObjects != nil && metadataObjects.count > 0 {
+            let metaData = metadataObjects.first as! AVMetadataMachineReadableCodeObject
+            
+            print(metaData.stringValue ?? "")
+            
+            DispatchQueue.main.async(execute: {
+                let result = WebViewController()
+                result.url = metaData.stringValue
+                self.navigationController?.pushViewController(result, animated: true)
+            })
+            seesion?.stopRunning()
+        }
     }
-    
-    
 }
-
-
-
-
-
-

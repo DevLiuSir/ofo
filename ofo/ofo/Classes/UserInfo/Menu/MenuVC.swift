@@ -33,17 +33,18 @@ class MenuVC: UIViewController {
     
     // MARK: - 属性
     /// 当前视图是否在离开动画中，用来处理平移手势时，以防重复调用。
-    var isAnimating = false
+    private var isAnimating = false
     
     /// 是否激活动画Cell
-    var shouldAnimateCell = true
+    private var shouldAnimateCell = true
     
     /// 菜单数据数组
-    var menuData = ["我的行程", "我的钱包", "邀请好友", "兑优惠券", "我的消息", "我的客服"]
+    private var menuData = ["我的行程", "我的钱包", "邀请好友", "兑优惠券", "我的消息", "我的客服"]
     
     /// 菜单头像
-    var menuIconName = ["icon_slide_trip2", "icon_slide_wallet2", "icon_slide_invite2", "icon_slide_coupon2", "icon_slide_myMsg","icon_slide_usage_guild2"]
+    private var menuIconName = ["icon_slide_trip2", "icon_slide_wallet2", "icon_slide_invite2", "icon_slide_coupon2", "icon_slide_myMsg","icon_slide_usage_guild2"]
     
+    // MARK: - 按钮事件
     
     /// 关闭按钮事件
     ///
@@ -53,7 +54,9 @@ class MenuVC: UIViewController {
         viewLeaveAnimation()
     }
     
-    // MARK: - 视图生命周期
+    // MARK: - 系统方法
+    
+    /// 视图生命周期
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -64,10 +67,9 @@ class MenuVC: UIViewController {
         tableBgView.transform = CGAffineTransform(translationX: 0, y: screenH)
         headerView.transform = CGAffineTransform(translationX: 0, y: -screenH)
         
-        // 创建单击手势, 并添加
+        // 创建拖动手势, 并添加
         let panGestrue = UIPanGestureRecognizer(target: self, action: #selector(handlePanGesture))
         view.addGestureRecognizer(panGestrue)
-   
     }
     
     /// 对象的视图已经加入到窗口时,调用
@@ -78,7 +80,7 @@ class MenuVC: UIViewController {
         
         viewEnterAnimation()
         
-        //当且仅当第一次载入视图的时候，Cell展示动画。
+        // 当第一次载入视图的时候，Cell展示动画。
         if shouldAnimateCell {
             startCellDisplayAnimation()
             shouldAnimateCell = false
@@ -102,10 +104,6 @@ class MenuVC: UIViewController {
         
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
-    
-    
-    
-    
 }
 
 // MARK: - 配置UI界面
@@ -129,7 +127,7 @@ extension MenuVC {
     /// 平移手势，当向下平移时，关闭菜单
     ///
     /// - Parameter recognizer: 拖动手势识别器
-    func handlePanGesture(recognizer: UIPanGestureRecognizer) {
+    @objc func handlePanGesture(recognizer: UIPanGestureRecognizer) {
         /// 获取拖动的Y值
         let translationY = recognizer.translation(in: self.view).y
         // 拖动的值清零
@@ -142,10 +140,8 @@ extension MenuVC {
         }
     }
     
-    
-    
     /// 视图显示时的动画
-    func viewEnterAnimation() {
+    private func viewEnterAnimation() {
         
 //        let main = MainViewController()
 //        let radio = 1 - offSetX
@@ -159,15 +155,12 @@ extension MenuVC {
     }
     /// 视图关闭时的动画
     func viewLeaveAnimation() {
-        
         UIView.animate(withDuration: 0.3, animations: {     // 平移
             self.tableBgView.transform = CGAffineTransform(translationX: 0, y: screenH)
             self.headerView.transform = CGAffineTransform(translationX: 0, y: -screenH)
         }) { (finished) in
             self.dismiss(animated: false, completion: nil)
         }
-        
-        
     }
     
     /// 刚开始载入Cell的时候，有一个往上拱的动画。
@@ -196,9 +189,6 @@ extension MenuVC {
             index += 1
         }
     }
-
-    
-    
 }
 
 

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="F8p-aJ-2BB">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="F8p-aJ-2BB">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -14,11 +14,11 @@
             <objects>
                 <viewController id="8re-S5-SS1" customClass="MenuVC" customModule="ofo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="4oO-Kc-jDW"/>
-                        <viewControllerLayoutGuide type="bottom" id="C5W-Wc-fvI"/>
+                        <viewControllerLayoutGuide type="top" id="Hxe-Ld-2bh"/>
+                        <viewControllerLayoutGuide type="bottom" id="sp1-Pq-aNU"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="1ms-Ah-kMY">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j2A-d3-gR4">
@@ -43,11 +43,11 @@
                                     <constraint firstAttribute="height" constant="300" id="ftI-Lg-ehH"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UDy-tg-Eoe">
-                                <rect key="frame" x="0.0" y="124" width="375" height="543"/>
+                            <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UDy-tg-Eoe">
+                                <rect key="frame" x="0.0" y="148" width="375" height="664"/>
                                 <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="60" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="h9W-zl-bsF">
-                                        <rect key="frame" x="0.0" y="180" width="375" height="363"/>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="60" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="h9W-zl-bsF">
+                                        <rect key="frame" x="0.0" y="180" width="375" height="484"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CustomMenuCell" rowHeight="60" id="JNc-Ky-XKd" customClass="CustomMenuTabelCell" customModule="ofo" customModuleProvider="target">
@@ -188,8 +188,8 @@
                             <constraint firstItem="j2A-d3-gR4" firstAttribute="top" secondItem="1ms-Ah-kMY" secondAttribute="top" id="Ecr-sG-a6U"/>
                             <constraint firstAttribute="trailing" secondItem="UDy-tg-Eoe" secondAttribute="trailing" id="RSW-P3-AcA"/>
                             <constraint firstItem="j2A-d3-gR4" firstAttribute="leading" secondItem="1ms-Ah-kMY" secondAttribute="leading" id="ekR-Ix-cgk"/>
-                            <constraint firstItem="C5W-Wc-fvI" firstAttribute="top" secondItem="UDy-tg-Eoe" secondAttribute="bottom" id="mv8-Ct-v5D"/>
-                            <constraint firstItem="UDy-tg-Eoe" firstAttribute="top" secondItem="4oO-Kc-jDW" secondAttribute="bottom" constant="60" id="z1h-mV-JC3"/>
+                            <constraint firstAttribute="bottom" secondItem="UDy-tg-Eoe" secondAttribute="bottom" id="iQi-xr-eq7"/>
+                            <constraint firstItem="UDy-tg-Eoe" firstAttribute="top" secondItem="Hxe-Ld-2bh" secondAttribute="bottom" constant="60" id="z1h-mV-JC3"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="b0c-hn-TIc"/>
@@ -204,7 +204,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gWw-lQ-TVU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3321" y="1207"/>
+            <point key="canvasLocation" x="3320.8000000000002" y="1206.6502463054187"/>
         </scene>
         <!--UserInfoController-->
         <scene sceneID="F1z-zZ-Pi7">
@@ -222,7 +222,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="F8p-aJ-2BB" customClass="MyNavigationController" customModule="ofo" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Wsx-08-4jc">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
